@@ -1,0 +1,58 @@
+@import "../index.scss";
+* {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+.hero-container {
+  display: grid;
+  justify-content: space-between;
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    .the-best-ad {
+      display: flex;
+      justify-content: center;
+      span {
+        padding: 1.2rem 1.2rem 1.2rem 0.4rem;
+        background-color: #393d42;
+        border-radius: 50px;
+        color: white;
+        text-transform: uppercase;
+      }
+      :nth-child(1)span {
+        padding: 0.8rem 0rem 0.8rem 0.8rem;
+        background-color: $orange;
+        border-radius: 50px;
+      }
+    }
+    .stroke-text {
+      span {
+        -webkit-text-stroke: 1px white;
+        -webkit-text-fill-color: transparent;
+      }
+      text-align: justify;
+      font-size: 3rem;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      color: white;
+    }
+    .figures {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    }
+    .figures > div {
+      display: grid;
+      background-color: red;
+    }
+    .button-hero {
+      display: grid;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr auto;
+  }
+}

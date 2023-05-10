@@ -1,0 +1,33 @@
+@import "../index.scss";
+
+.container-header {
+  background-color: gray;
+  display: grid;
+  justify-content: space-between;
+  .logo {
+    width: 10rem;
+    height: 3rem;
+  }
+  .header-menu {
+    color: white;
+    gap: 2rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+
+    & > div {
+        cursor: pointer;
+    }
+    & > div:hover {
+        color: $orange;
+        cursor: pointer;
+    }
+
+  }
+}
+@media (min-width: 1024px) {
+  .container-header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
