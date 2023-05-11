@@ -5,54 +5,156 @@
 }
 .hero-container {
   display: grid;
-  justify-content: space-between;
+  justify-content: center;
   .hero-left {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 1rem;
     gap: 1rem;
     .the-best-ad {
+      position: relative;
       display: flex;
       justify-content: center;
-      span {
-        padding: 1.2rem 1.2rem 1.2rem 0.4rem;
-        background-color: #393d42;
-        border-radius: 50px;
-        color: white;
-        text-transform: uppercase;
-      }
-      :nth-child(1)span {
-        padding: 0.8rem 0rem 0.8rem 0.8rem;
+      align-items: center;
+      background-color: #393d42;
+      width: fit-content;
+      padding: 20px 13px;
+      border-radius: 50px;
+      margin: auto;
+      color: white;
+      text-transform: uppercase;
+      & > div {
+        position: absolute;
         background-color: $orange;
+        width: 5.4rem;
+        height: 80%;
         border-radius: 50px;
+        left: 8px;
+      }
+      & > span {
+        z-index: 100;
       }
     }
-    .stroke-text {
-      span {
-        -webkit-text-stroke: 1px white;
-        -webkit-text-fill-color: transparent;
-      }
-      text-align: justify;
+    .stroke-text-container {
+      text-align: center;
       font-size: 3rem;
       font-family: "Inter", sans-serif;
       font-weight: 700;
       color: white;
     }
+    .hero-text {
+      text-align: center;
+    }
     .figures {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
     .figures > div {
       display: grid;
-      background-color: red;
+
+      & :nth-child(1) {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+      & :nth-child(2) {
+        color: $gray;
+      }
     }
     .button-hero {
       display: grid;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+  }
+  .hero-right {
+    position: relative;
+    .container-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .hero-image {
+        position: relative;
+        max-width: 15rem;
+        z-index: 100;
+      }
+      .hero-image-back {
+        position: absolute;
+        width: 12rem;
+        right: 13rem;
+      }
+    }
+    .heart-container {
+      position: absolute;
+      background-color: $darkGrey;
+      width: fit-content;
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      top: 0;
+      right: 2rem;
+      z-index: 100;
+      img {
+        width: 2rem;
+      }
+      span:nth-child(2) {
+        color: gray;
+      }
+      span:nth-child(3) {
+        font-size: 1.4rem;
+      }
+    }
+    .calories-container {
+      display: flex;
+      background-color: $caloryCard;
+      width: fit-content;
+      border-radius: 10px;
+      padding: 1rem;
+      gap: 2rem;
+      img {
+        width: 3rem;
+        height: 6rem;
+      }
+      div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        span:nth-child(1) {
+          color: $gray;
+        }
+        span:nth-child(2) {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 }
 @media (min-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr auto;
+    .hero-left {
+      align-items: flex-start;
+      .stroke-text-container {
+        text-align: start;
+      }
+      .button-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .hero-right {
+      .container-image {
+        .hero-image {
+          z-index: 100;
+        }
+        .hero-image-back {
+          top: 0;
+          right: 10rem;
+        }
+      }
+    }
   }
 }

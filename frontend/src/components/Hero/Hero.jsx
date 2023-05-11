@@ -10,13 +10,13 @@ const Hero = () => {
           <div className="hero-left">
             <Header />
             <div className="the-best-ad">
-              <span className="text">
-                <span>The best </span>fitness club in the town
-              </span>
+              <div></div>
+              <span className="text">The best fitness club in the town</span>
             </div>
             <div className="hero-text">
-              <h1 className="stroke-text">
-                <span>SHAPE</span> YOUR <br /> IDEAL BODY
+              <h1 className="stroke-text-container">
+                <span className="stroke-text">SHAPE</span> YOUR <br /> IDEAL
+                BODY
               </h1>
               <span>
                 In here we will help you to shape and build your ideal body and
@@ -38,11 +38,44 @@ const Hero = () => {
               </div>
             </div>
             <div className="button-hero">
-              <button>Get Started</button>
-              <button>Learn More</button>
+              <button className="button-fill">Get Started</button>
+              <button className="button-fill">Learn More</button>
             </div>
           </div>
-          <div className="hero-right"> right side</div>
+          <div className="hero-right">
+            {" "}
+            <div className="container-image">
+              <img
+                className="hero-image"
+                src="./assets/hero_image.png"
+                alt=""
+              />
+              <img
+                className="hero-image-back"
+                src="./assets/hero_image_back.png"
+                alt=""
+              />
+            </div>
+            <div className="heart-container">
+              <img src="./assets/heart.png" alt="" />
+              <span>Heart Rate</span>
+              <span>116 bpm</span>
+            </div>
+            <div className="calories-container">
+              <div className="container-image">
+                <img src="./assets/calories.png" alt="" />
+              </div>
+              <div>
+                <span>
+                  Calories <br /> burned
+                </span>
+                <span>
+                  220 <br /> kcal
+                </span>
+              </div>
+            </div>
+            <div className="calories-burned-container"></div>
+          </div>
         </div>
       </section>
     </div>

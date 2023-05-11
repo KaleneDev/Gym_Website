@@ -18,3 +18,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.stroke-text {
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: transparent;
+}
+.button-fill {
+  background-color: $orange;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: 600;
+}
+.button-unfill {
+}
