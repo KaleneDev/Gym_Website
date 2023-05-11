@@ -4,7 +4,11 @@ const Header = () => {
   return (
     <section className="header-wrapper">
       <div className="container-header">
-        <img src="./assets/logo.png" alt="" className="logo" />
+        
+        <div className="logo-container">
+          <img src="./assets/logo.png" alt="" className="logo" />
+        </div>
+
         <div className="header-menu">
           <div>Home</div>
           <div>Prolgrams</div>

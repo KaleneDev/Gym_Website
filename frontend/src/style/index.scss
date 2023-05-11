@@ -25,9 +25,15 @@ code {
 }
 .button-fill {
   background-color: $orange;
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   border: none;
   font-weight: 600;
+  border: 3px solid $orange;
 }
 .button-unfill {
+  background-color: transparent;
+  padding: 0.7rem 2rem;
+  border: 3px solid $orange;
+  font-weight: 600;
+  color: orange;
 }

@@ -39,7 +39,7 @@ const Hero = () => {
             </div>
             <div className="button-hero">
               <button className="button-fill">Get Started</button>
-              <button className="button-fill">Learn More</button>
+              <button className="button-unfill">Learn More</button>
             </div>
           </div>
           <div className="hero-right">
@@ -62,16 +62,12 @@ const Hero = () => {
               <span>116 bpm</span>
             </div>
             <div className="calories-container">
-              <div className="container-image">
+              <div className="calories-container-image">
                 <img src="./assets/calories.png" alt="" />
               </div>
               <div>
-                <span>
-                  Calories <br /> burned
-                </span>
-                <span>
-                  220 <br /> kcal
-                </span>
+                <span>Calories burned</span>
+                <span>220 kcal</span>
               </div>
             </div>
             <div className="calories-burned-container"></div>
