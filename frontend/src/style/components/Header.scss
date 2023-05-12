@@ -1,57 +1,101 @@
 @import "../index.scss";
 
 .container-header {
-  background-color: gray;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .logo {
-    width: 10rem;
-    height: 3rem;
-  }
-  .header-menu {
-    color: white;
-    gap: 1rem;
+    background-color: gray;
     display: flex;
     align-items: center;
-
-    & > div {
-      cursor: pointer;
+    justify-content: space-between;
+    .nav-btn {
+        visibility: hidden;
+        opacity: 0;
     }
-    & > div:hover {
-      color: $orange;
-      cursor: pointer;
-    }
-  }
-}
-@media (max-width: 768px) {
-  .container-header {
-    .logo-container {
-      background-color: red;
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 400;
-      width: 100%;
-      img {
-        padding: 0.2rem;
-        // margin: 2rem;
-      }
+    .logo {
+        width: 10rem;
+        height: 3rem;
     }
     .header-menu {
-      position: fixed;
-      z-index: 300;
-      background-color: $gray;
-      left: 50%;
-      top: 0;
-      transform: translate(-50%, 0);
-      display: flex;
-      flex-direction: column;
-      width: 50vw;
-      height: 50vh;
-      justify-content: center;
-      border-radius: 0px 0 10px 10px;
+        color: white;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+
+        & > div {
+            cursor: pointer;
+        }
+        & > div:hover {
+            color: $orange;
+            cursor: pointer;
+        }
     }
-  }
+}
+
+@media (max-width: 768px) {
+    .container-header {
+        .logo-container {
+            background-color: $orange;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 400;
+            width: 100%;
+            img {
+                padding: 0.2rem;
+                // margin: 2rem;
+            }
+        }
+        .nav-btn {
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            display: block;
+            z-index: 500;
+            font-size: 2rem;
+            margin-right: 1rem;
+            right: 0;
+        }
+        .btn-close {
+            visibility: hidden;
+            opacity: 0;
+        }
+        .header-menu.responsive_nav {
+            transform: none;
+        }
+        .btn-close.responsive_nav {
+            visibility: visible;
+            opacity: 1;
+        }
+        .fa-bars.responsive_nav {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .header-menu {
+            position: fixed;
+            z-index: 300;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            right: 2rem;
+            top: 54.38px;
+            transform: translate(0, 0);
+            flex-direction: column;
+            width: 400px;
+            height: 30vh;
+            justify-content: center;
+            border-radius: 10px 10px;
+            transition: 0.5s;
+            transform: translateY(-40vh);
+            justify-content: space-between;
+            padding: 2rem 0;
+        }
+    }
+}
+@media (max-width: 480px) {
+    .container-header {
+        .header-menu {
+            width: calc(100% - 4rem);
+        }
+    }
 }

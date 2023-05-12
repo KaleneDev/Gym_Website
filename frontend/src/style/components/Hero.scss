@@ -1,222 +1,251 @@
 @import "../index.scss";
 * {
-  font-family: "Inter", sans-serif;
-  color: white;
+    font-family: "Inter", sans-serif;
+    color: white;
 }
+
 .hero-container {
-  display: grid;
-  justify-content: center;
-  .hero-left {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    .the-best-ad {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #393d42;
-      width: fit-content;
-      padding: 20px 13px;
-      border-radius: 50px;
-      margin: auto;
-      color: white;
-      text-transform: uppercase;
-      & > div {
-        position: absolute;
-        background-color: $orange;
-        width: 5.4rem;
-        height: 80%;
-        border-radius: 50px;
-        left: 8px;
-      }
-      & > span {
-        z-index: 100;
-        font-size: 0.9rem;
-      }
-    }
-    .stroke-text-container {
-      text-align: center;
-      font-size: 2.5rem;
-      font-family: "Inter", sans-serif;
-      font-weight: 700;
-      color: white;
-      line-height: 4rem;
-    }
-    .hero-text {
-      text-align: center;
-    }
-    .figures {
-      display: grid;
-      gap: 0.7rem;
-      grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-    }
-    .figures > div {
-      display: grid;
-
-      & :nth-child(1) {
-        font-size: 1.5rem;
-        font-weight: 400;
-      }
-      & :nth-child(2) {
-        color: $gray;
-      }
-    }
-    .button-hero {
-      display: grid;
-      gap: 1rem;
-      justify-content: center;
-      align-items: center;
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    }
-  }
-  .hero-right {
-    position: relative;
-    .container-image {
-      padding: 2rem;
-
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      .hero-image {
-        position: relative;
-        max-width: 16rem;
-        z-index: 100;
-        left: 5.5rem;
-        top: 2rem;
-      }
-      .hero-image-back {
-        position: absolute;
-        width: 16rem;
-      }
-    }
-    .heart-container {
-      position: absolute;
-      background-color: $darkGrey;
-      width: fit-content;
-      border-radius: 10px;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-      top: 0;
-      left: 1rem;
-      img {
-        width: 2rem;
-      }
-      span:nth-child(2) {
-        color: gray;
-      }
-      span:nth-child(3) {
-        font-size: 1.4rem;
-      }
-    }
-    .calories-container {
-      display: flex;
-      background-color: $caloryCard;
-      width: fit-content;
-      border-radius: 10px;
-      padding: 1rem;
-      gap: 2rem;
-      margin-top: 3rem;
-      margin: 1rem;
-      img {
-        width: 2rem;
-      }
-      div:nth-child(2) {
+    // padding-bottom: 15vw;
+    margin-bottom: 10vw;
+    .hero-left {
+        padding: 1rem;
         display: flex;
         flex-direction: column;
-        span:nth-child(1) {
-          color: $gray;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        margin-top: 55px;
+
+        .the-best-ad {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #393d42;
+            width: fit-content;
+            padding: 20px 13px;
+            border-radius: 50px;
+            margin: auto;
+            color: white;
+            text-transform: uppercase;
+            & > div {
+                position: absolute;
+                background-color: $orange;
+                width: 5.4rem;
+                height: 80%;
+                border-radius: 50px;
+                left: 8px;
+            }
+            & > span {
+                z-index: 100;
+                font-size: 0.9rem;
+            }
         }
-        span:nth-child(2) {
-          font-size: 1.5rem;
+        .stroke-text-container {
+            text-align: center;
+            font-size: calc((8000vw / 1920) * 2);
+            font-family: "Inter", sans-serif;
+            font-weight: 700;
+            color: white;
+            // line-height: 4rem;
         }
-      }
-    }
-  }
-}
-@media (min-width: 768px) {
-  .hero-container {
-    grid-template-columns: 80% 20%;
-    .hero-left {
-      position: relative;
-      margin-bottom: 10rem;
-      gap: 2rem;
-      .the-best-ad {
-        margin: 0;
-      }
-      .hero-text {
-        span:nth-child(2) {
-          display: flex;
-          padding-right: 15rem;
-          
+        .hero-text {
+            text-align: center;
         }
-      }
-      .stroke-text-container {
-        text-align: start;
-        font-size: 4.5rem;
-        line-height: 7rem;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      .figures {
-        display: flex;
-      }
-      .button-hero {
-        width: 25rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-      .hero-text {
-        text-align: start;
-      }
+        .figures {
+            display: grid;
+            gap: 0.7rem;
+            grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        }
+        .figures > div {
+            display: grid;
+
+            & :nth-child(1) {
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+            & :nth-child(2) {
+                color: $gray;
+            }
+        }
+        .button-hero {
+            display: grid;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        }
     }
     .hero-right {
-      background-color: $orange;
-
-      .container-image {
-        right: 0;
         position: relative;
-        .hero-image {
-          position: absolute;
-          z-index: 100;
-          max-width: 25rem;
-          width: 200%;
-          left: -16rem;
-          top: 10rem;
+        display: grid;
+
+        .container-image {
+            padding: 2rem;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .hero-image {
+                position: relative;
+                max-width: 16rem;
+                z-index: 100;
+                left: 5.5rem;
+                top: 2rem;
+            }
+            .hero-image-back {
+                position: absolute;
+                width: 16rem;
+                // bottom: 11rem;
+                left: 3rem;
+            }
         }
-        .hero-image-back {
-          top: 1rem;
-          left: -20.5rem;
-          max-width: 18rem;
-          width: 140%;
+        .heart-container {
+            position: absolute;
+            background-color: $darkGrey;
+            width: fit-content;
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            top: 0;
+            left: 1rem;
+            img {
+                width: 2rem;
+            }
+            span:nth-child(2) {
+                color: gray;
+            }
+            span:nth-child(3) {
+                font-size: 1.4rem;
+            }
         }
-      }
-      .heart-container {
-        top: 1rem;
-      }
-      .calories-container {
-        gap: 0;
-        position: absolute;
-        bottom: 0;
-        left: -2rem;
-        z-index: 200;
-        & > div {
-          flex: 1;
+        .calories-container {
+            display: flex;
+            position: absolute;
+            background-color: $caloryCard;
+            width: fit-content;
+            border-radius: 10px;
+            padding: 1rem;
+            gap: 2rem;
+            margin-top: 3rem;
+            margin: 1rem;
+            height: fit-content;
+            right: 0;
+            z-index: 100;
+            img {
+                width: fit-content;
+            }
+            div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                span:nth-child(1) {
+                    color: $gray;
+                }
+                span:nth-child(2) {
+                    font-size: 1.5rem;
+                }
+            }
         }
-        .calories-container-image {
-          img {
-            height: 6rem;
-            width: 4rem;
-          }
-        }
-      }
     }
-  }
+}
+@media (max-width: 480px) {
+    .hero-container {
+        .hero-right {
+            display: grid;
+            grid-template-columns: 1fr;
+            .calories-container {
+                align-items: center;
+                position: relative;
+                margin: auto;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .hero-container {
+        grid-template-columns: 80% 20%;
+
+        .hero-left {
+            position: relative;
+            margin-bottom: 4rem;
+            margin-top: 0;
+            gap: 2rem;
+            .the-best-ad {
+                margin: 0;
+            }
+            .hero-text {
+                span:nth-child(2) {
+                    display: flex;
+                    padding-right: 15rem;
+                }
+            }
+            .stroke-text-container {
+                text-align: start;
+                font-size: calc(6000vw / 1920);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .figures {
+                display: flex;
+            }
+            .button-hero {
+                width: 25rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-text {
+                text-align: start;
+                & > h1 {
+                    margin: 1rem 0;
+                }
+            }
+        }
+        .hero-right {
+            background-color: $orange;
+
+            .container-image {
+                right: 0;
+                position: relative;
+                .hero-image {
+                    position: absolute;
+                    z-index: 100;
+                    max-width: 25rem;
+                    width: 200%;
+                    left: -16rem;
+                    top: 10rem;
+                }
+                .hero-image-back {
+                    top: 1rem;
+                    left: -20.5rem;
+                    max-width: 18rem;
+                    width: 140%;
+                }
+            }
+            .heart-container {
+                top: 1rem;
+            }
+            .calories-container {
+                gap: 0;
+                position: absolute;
+                bottom: 0;
+                left: -2rem;
+                z-index: 200;
+                & > div {
+                    flex: 1;
+                }
+                .calories-container-image {
+                    img {
+                        height: 6rem;
+                        width: 4rem;
+                    }
+                }
+            }
+        }
+    }
 }
 // @media (min-width: 1024px) {
 //   .hero-container {

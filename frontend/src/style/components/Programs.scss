@@ -1,0 +1,67 @@
+@import "../index.scss";
+
+.programs-container {
+    margin: 2rem 0;
+    gap: 1rem;
+    display: grid;
+    .title-programs {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        span {
+            font-size: 2.8rem;
+            font-style: italic;
+            font-weight: 600;
+        }
+    }
+    .programs-card-container {
+        padding: 1rem;
+    }
+    .programs-card {
+        & > svg {
+            width: 2rem;
+            height: 2rem;
+            fill: white;
+        }
+
+        margin: 1rem 0;
+        .title {
+            font-weight: 600;
+        }
+        display: grid;
+        background-color: $gray;
+        padding: 2rem;
+        gap: 1rem;
+        .join-now {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            img {
+                width: 1rem;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .programs-container {
+        // margin-top: 20vw;
+        .title-programs {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .programs-card-container {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        }
+    }
+}
+// @media (min-width: 1024px) {
+//     .programs-container {
+//         .programs-card-container {
+//             display: grid;
+//             gap: 1rem;
+//             grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+//         }
+//     }
+// }
