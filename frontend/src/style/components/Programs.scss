@@ -17,6 +17,8 @@
     }
     .programs-card-container {
         padding: 1rem;
+        display: grid;
+        gap: 1rem;
     }
     .programs-card {
         & > svg {
@@ -25,7 +27,6 @@
             fill: white;
         }
 
-        margin: 1rem 0;
         .title {
             font-weight: 600;
         }
@@ -52,16 +53,14 @@
         .programs-card-container {
             display: grid;
             gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            grid-template-columns: 1fr 1fr;
         }
     }
 }
-// @media (min-width: 1024px) {
-//     .programs-container {
-//         .programs-card-container {
-//             display: grid;
-//             gap: 1rem;
-//             grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-//         }
-//     }
-// }
+@media (min-width: 1024px) {
+    .programs-container {
+        .programs-card-container {
+            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        }
+    }
+}
