@@ -1,6 +1,7 @@
 import React from "react";
 import "../../style/components/Programs.scss";
 import { programsData } from "../../data/programsData";
+import rightArrow from "../../assets/rightArrow.png";
 const Programs = () => {
     console.log(programsData);
     return (
@@ -19,12 +20,12 @@ const Programs = () => {
                             <span>{program.details}</span>
                             <div className="join-now">
                                 <span>Join now</span>
-                                <img src="./assets/rightArrow.png" alt="" />
+                                <img src={rightArrow} alt="" />
                             </div>
                         </div>
                     ))}
                 </div>
-                
+
                 {/* <div className="programs-card-container">
                     <div className="programs-card">
                         <img src="./assets/dumbell.svg" alt="" />

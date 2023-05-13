@@ -1,0 +1,31 @@
+@import "../index.scss";
+
+.testimonials__container {
+    display: grid;
+    padding: 1rem;
+    .testimonials__container__left {
+        display: grid;
+        gap: 1rem;
+        & > :nth-child(1) {
+            color: $orange;
+            font-weight: 700;
+        }
+        & > :nth-child(2) {
+            font-weight: 700;
+            font-size: 2.9rem;
+        }
+        & > :nth-child(3) {
+            font-weight: 700;
+            font-size: 2.9rem;
+        }
+        & > :nth-child(4) {
+            font-size: 1rem;
+            line-height: 2rem;
+        }
+    }
+    .testimonials__container__right {
+        img {
+            width: 100%;
+        }
+    }
+}
