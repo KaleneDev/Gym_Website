@@ -10,7 +10,8 @@
         align-items: center;
         text-align: center;
         span {
-            font-size: 2.8rem;
+            // font-size: 2.8rem;
+            font-size: calc(5000vw / 768);
             font-style: italic;
             font-weight: 600;
         }
@@ -49,14 +50,18 @@
         // margin-top: 20vw;
         .title-programs {
             grid-template-columns: 1fr 1fr 1fr;
-        }
-        .programs-card-container {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: 1fr 1fr;
+            span {
+                font-size: 50px;
+            }
         }
     }
+    .programs-card-container {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+    }
 }
+
 @media (min-width: 1024px) {
     .programs-container {
         .programs-card-container {

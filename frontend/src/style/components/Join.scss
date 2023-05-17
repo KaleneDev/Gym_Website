@@ -1,0 +1,55 @@
+@import "../index.scss";
+
+.join__container {
+    padding: 1rem;
+    .join__left__block-left {
+        h2 {
+            font-size: calc(5000vw / 768);
+            font-weight: 700;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    }
+    .join__left__block-right {
+        .join__email__container {
+            margin: auto;
+            background-color: $gray;
+            padding: 1rem 2rem;
+            display: grid;
+            gap: 1rem;
+            max-width: 400px;
+            input {
+                background-color: $lightgray;
+                border: none;
+                outline: none;
+                height: 40px;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .join__container {
+        .join__left__block-left {
+            h2 {
+                font-size: 50px;
+            }
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .join__container {
+        .join__left {
+            display: flex;
+            .join__left__block-left {
+                flex: 3;
+                h2 {
+                    text-align: start;
+                }
+            }
+            .join__left__block-right {
+                flex: 2;
+                margin: auto 0;
+            }
+        }
+    }
+}

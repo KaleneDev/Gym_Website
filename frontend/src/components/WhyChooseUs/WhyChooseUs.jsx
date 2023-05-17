@@ -7,7 +7,7 @@ import image4 from "../../assets/image4.png";
 import tick from "../../assets/tick.png";
 const WhyChoiseUs = () => {
     return (
-        <section className="wrapper-choose max-width-1400px">
+        <section className="max-width-1400px innerWidth">
             <div className="container-choose">
                 <div className="container-choose__left">
                     <img

@@ -8,7 +8,7 @@ import calories from "../../assets/calories.png";
 
 const Hero = () => {
     return (
-        <section className="hero-wrapper max-width-1400px">
+        <section className="hero-wrapper max-width-1400px innerWidth">
             <div className="hero-container">
                 <div className="hero-left">
                     <Header />

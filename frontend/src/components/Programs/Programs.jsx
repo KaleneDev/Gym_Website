@@ -5,7 +5,7 @@ import rightArrow from "../../assets/rightArrow.png";
 const Programs = () => {
     console.log(programsData);
     return (
-        <section className="programs-wrapper max-width-1400px">
+        <section className="max-width-1400px innerWidth">
             <div className="programs-container">
                 <div className="title-programs">
                     <span className="stroke-text">EXPLORE OUR</span>

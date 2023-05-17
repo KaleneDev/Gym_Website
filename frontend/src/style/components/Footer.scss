@@ -1,0 +1,21 @@
+@import "../index.scss";
+.footer__container {
+    display: grid;
+    text-align: center;
+    gap: 3rem;
+    margin: 5rem 0;
+    .footer__logo-social {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        & > svg {
+            
+            font-size: 3rem;
+        }
+    }
+    .logo {
+        img {
+            width: 200px;
+        }
+    }
+}

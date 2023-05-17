@@ -5,7 +5,7 @@ import whiteTick from "../../assets/whiteTick.png";
 
 const Plans = () => {
     return (
-        <section>
+        <section className="max-width-1400px innerWidth">
             <div className="plans__container">
                 <div className="plans__container__header">
                     <span className="stroke-text">READY TO START</span>

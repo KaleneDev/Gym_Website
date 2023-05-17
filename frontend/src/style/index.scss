@@ -31,6 +31,7 @@ code {
     border: none;
     font-weight: 600;
     border: 3px solid $orange;
+    cursor: pointer;
 }
 .button-unfill {
     background-color: transparent;
@@ -38,6 +39,8 @@ code {
     border: 3px solid $orange;
     font-weight: 600;
     color: orange;
+    cursor: pointer;
+
 }
 
 .text-orange {
@@ -49,4 +52,7 @@ code {
 .max-width-1400px {
     max-width: 1400px;
     margin: auto;
+}
+.innerWidth {
+    width: 100%;
 }
