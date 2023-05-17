@@ -3,6 +3,8 @@
 .App {
   position: relative;
   overflow-x: clip;
+  // display: grid;
+  gap: 2rem;
   & > :nth-child(1) {
     position: relative;
   }

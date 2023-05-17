@@ -2,6 +2,7 @@
 .plans__container {
     // margin: 2rem 0;
     display: grid;
+    gap: 2rem;
     .plans__container__header {
         gap: 0.5rem;
         display: grid;
@@ -16,12 +17,18 @@
         display: grid;
         gap: 1rem;
         padding: 1rem;
-
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
         .plans__container__cards__card {
+            margin: 0 auto;
             display: grid;
             gap: 2rem;
             padding: 1rem;
             background-color: $caloryCard;
+            max-width: 15rem;
+            &.center-item {
+                grid-column: span 2;
+                justify-self: center;
+            }
             button {
                 color: black;
                 background-color: white;
