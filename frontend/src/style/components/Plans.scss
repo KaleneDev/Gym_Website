@@ -15,14 +15,37 @@
     }
     .plans__container__cards {
         display: grid;
-        gap: 1rem;
+        gap: 2rem;
         padding: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 18rem));
+        justify-content: center;
+        & > div:nth-child(1) {
+            // margin-right: 0;
+        }
+        & > div:nth-child(2) {
+            scale: 1.05;
+            background: linear-gradient(
+                180deg,
+                rgb(254, 69, 27) 0%,
+                rgba(252, 176, 69, 1) 100%
+            );
+
+            & :nth-child(1) {
+                fill: white;
+            }
+            button {
+                color: $orange;
+            }
+        }
+        & > div:nth-last-child(1) {
+            // margin-left: 0;
+
+        }
         .plans__container__cards__card {
             margin: 0 auto;
             display: grid;
             gap: 2rem;
-            padding: 1rem;
+            padding: 2rem;
             background-color: $caloryCard;
             max-width: 15rem;
             &.center-item {
@@ -34,19 +57,7 @@
                 background-color: white;
                 border: none;
             }
-            &:nth-child(2) {
-                background: linear-gradient(
-                    180deg,
-                    rgb(254, 69, 27) 0%,
-                    rgba(252, 176, 69, 1) 100%
-                );
-                & :nth-child(1) {
-                    fill: white;
-                }
-                button {
-                    color: $orange;
-                }
-            }
+
             & :nth-child(1) {
                 width: 30px;
                 height: 30px;
@@ -83,4 +94,10 @@
 }
 
 @media (min-width: 1024px) {
+    .plans__container {
+        .plans__container__cards {
+            // margin: auto;
+            // max-width: 1024px;
+        }
+    }
 }
