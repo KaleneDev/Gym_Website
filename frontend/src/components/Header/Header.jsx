@@ -3,8 +3,6 @@ import "../../style/components/Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-// import test from "../../utils/OutSideClick";
-import { test2, test } from "../../utils/OutSideClick";
 import logo from "../../assets/logo.png";
 library.add(faBars, faXmark);
 const Header = () => {
@@ -26,7 +24,7 @@ const Header = () => {
                             !ref.current.contains(event.target) &&
                             !refBurger.current.contains(event.target),
                     ] &&
-                    ref.current.className == "header-menu responsive_nav"
+                    ref.current.className === "header-menu responsive_nav"
                 ) {
                     console.log(ref.current.className);
                     showNavbar();
@@ -37,7 +35,7 @@ const Header = () => {
             return () => {
                 document.removeEventListener("mousedown", handleClickOutside);
             };
-        }, [ref]);
+        }, [ref, refBurger]);
     }
     useOutsideAlerter(navRef, burger);
     return (
