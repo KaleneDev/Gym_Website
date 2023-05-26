@@ -20,8 +20,15 @@ const Hero = () => {
                     </div>
                     <div className="hero-text">
                         <h1 className="stroke-text-container">
-                            <span className="stroke-text">SHAPE</span> YOUR{" "}
-                            <br /> IDEAL BODY
+                            <div className="hero__shapeYour">
+                                <span>
+                                    <span className="stroke-text">SHAPE </span>
+                                    YOUR
+                                </span>
+                            </div>
+                            <div className="hero__idealBody">
+                                <span>IDEAL BODY</span>
+                            </div>
                         </h1>
                         <span>
                             In here we will help you to shape and build your

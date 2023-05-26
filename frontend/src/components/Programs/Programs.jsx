@@ -2,8 +2,8 @@ import React from "react";
 import "../../style/components/Programs.scss";
 import { programsData } from "../../data/programsData";
 import rightArrow from "../../assets/rightArrow.png";
+
 const Programs = () => {
-    console.log(programsData);
     return (
         <section className="max-width-1400px innerWidth">
             <div className="programs-container">

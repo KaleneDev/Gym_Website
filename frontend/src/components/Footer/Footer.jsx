@@ -11,7 +11,6 @@ const Footer = () => {
                     <FontAwesomeIcon icon="fa-brands fa-github" />
                     <FontAwesomeIcon icon="fab fa-instagram" />
                     <FontAwesomeIcon icon="fa-brands fa-linkedin" />
-                    <FontAwesomeIcon icon="fa-solid fa-square-up-right" />
                 </div>
                 <div className="logo">
                     <img src={logo} alt="" />
