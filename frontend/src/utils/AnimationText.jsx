@@ -138,7 +138,6 @@ const SlideInFromRight = ({ children, animationDuration, delay }) => {
             const keyAnimationDuration =
                 element.getAttribute("animationDuration");
             const keyAnimationDelay = element.getAttribute("delay");
-            console.log(keyAnimationDelay);
             element.style.animation = `slideInFromRight ${keyAnimationDuration}s ease-in-out forwards`;
             element.style.animationDelay = `${keyAnimationDelay}s`;
             element.style.transform = "translateX(100%)";
@@ -155,7 +154,6 @@ const SlideInFromRight = ({ children, animationDuration, delay }) => {
         </div>
     );
 };
-
 const SlideInFromLeft = ({ children, animationDuration, delay }) => {
     const className = `slideInFromLeft`;
     const delays = delay || 0;
@@ -206,7 +204,6 @@ const SlideInFromLeft = ({ children, animationDuration, delay }) => {
             const keyAnimationDuration =
                 element.getAttribute("animationDuration");
             const keyAnimationDelay = element.getAttribute("delay");
-            console.log(keyAnimationDelay);
             element.style.animation = `slideInFromLeft ${keyAnimationDuration}s ease-in-out forwards`;
             element.style.animationDelay = `${keyAnimationDelay}s`;
             element.style.transform = "translateX(-100%)";
@@ -227,63 +224,45 @@ const SlideInFromTop = ({ children, animationDuration, delay }) => {
     const className = `slideInFromTop`;
     const delays = delay || 0;
     const animationDurations = animationDuration || 1;
-
     useEffect(() => {
         const textElement = document.querySelectorAll(`.slideInFromTop`);
-        const styleSheet =
-            document.styleSheets[0] ||
-            document.head.appendChild(document.createElement("style")).sheet;
 
-        const keyframesRule = `
-        @keyframes slideInFromTop {
-          0% {
-            opacity: 0;
-            transform: translateY(-100%);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0%);
-          }
-        }
-      `;
+        window.addEventListener("scroll", checkContent);
 
-        if (styleSheet.insertRule) {
-            // Pour les navigateurs compatibles avec la méthode insertRule
-            styleSheet.insertRule(keyframesRule, styleSheet.cssRules.length);
-        } else {
-            // Pour les navigateurs compatibles avec la propriété addRule
-            styleSheet.addRule(
-                `
-    @keyframes slideInFromTop {
-      0% {
-        opacity: 0;
-        transform: translateY(-100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0%);
-      }
-    }
-  `,
-                -1
-            );
+        function checkContent() {
+            const triggerBottom = (window.innerHeight / 5) * 4;
+            textElement.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const keyAnimationDuration =
+                    element.getAttribute("animationDuration");
+                console.log(keyAnimationDuration);
+                const keyAnimationDelay = element.getAttribute("delay");
+                if (elementTop < triggerBottom) {
+                    element.classList.add("show");
+                    element.style.opacity = 1;
+                    element.style.transition = `transform 2s ease`;
+                    element.style.transition = `transform ${keyAnimationDuration}s ease, opacity ${
+                        keyAnimationDuration * 1.5
+                    }s ease`;
+                    element.style.animationDelay = `${keyAnimationDelay}s`;
+                } else {
+                    element.classList.remove("show");
+                    element.style.opacity = 0;
+                    element.style.transition = `transform ${keyAnimationDuration}s ease, opacity ${
+                        keyAnimationDuration * 1
+                    }s ease`;
+                    element.style.transition = `transform ${keyAnimationDuration}s ease, opacity ${
+                        keyAnimationDuration * 1
+                    }s ease`;
+                }
+            });
         }
-        textElement.forEach((element) => {
-            element.style.opacity = 0;
-            const keyAnimationDuration =
-                element.getAttribute("animationDuration");
-            const keyAnimationDelay = element.getAttribute("delay");
-            console.log(keyAnimationDelay);
-            element.style.animation = `slideInFromTop ${keyAnimationDuration}s ease-in-out forwards`;
-            element.style.animationDelay = `${keyAnimationDelay}s`;
-            element.style.transform = "translateY(-100%)";
-        });
     }, []);
 
     return (
         <div
             className={className}
-            animationduration={animationDurations}
+            animationDuration={animationDurations}
             delay={delays}
         >
             {children}

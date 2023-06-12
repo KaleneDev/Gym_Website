@@ -2,6 +2,13 @@ import React from "react";
 import "../../style/components/Programs.scss";
 import { programsData } from "../../data/programsData";
 import rightArrow from "../../assets/rightArrow.png";
+import {
+    TextAnimationBtoT,
+    FadeIn,
+    SlideInFromRight,
+    SlideInFromLeft,
+    SlideInFromTop,
+} from "../../utils/AnimationText";
 
 const Programs = () => {
     return (
@@ -12,17 +19,20 @@ const Programs = () => {
                     <span>PROGRAMS</span>
                     <span className="stroke-text">TO SHARE YOU</span>
                 </div>
+
                 <div className="programs-card-container">
                     {programsData.map((program, key) => (
-                        <div key={key} className="programs-card">
-                            {program.image}
-                            <span className="title">{program.heading}</span>
-                            <span>{program.details}</span>
-                            <div className="join-now">
-                                <span>Join now</span>
-                                <img src={rightArrow} alt="" />
+                        <SlideInFromTop delay={0.2 * key} animationDuration="1">
+                            <div key={key} className="programs-card">
+                                {program.image}
+                                <span className="title">{program.heading}</span>
+                                <span>{program.details}</span>
+                                <div className="join-now">
+                                    <span>Join now</span>
+                                    <img src={rightArrow} alt="" />
+                                </div>
                             </div>
-                        </div>
+                        </SlideInFromTop>
                     ))}
                 </div>
 
