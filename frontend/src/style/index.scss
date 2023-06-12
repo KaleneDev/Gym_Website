@@ -32,6 +32,7 @@ code {
     font-weight: 600;
     border: 3px solid $orange;
     cursor: pointer;
+    border-radius: 5px;
 }
 .button-unfill {
     background-color: transparent;
@@ -40,7 +41,7 @@ code {
     font-weight: 600;
     color: orange;
     cursor: pointer;
-
+    border-radius: 5px;
 }
 
 .text-orange {

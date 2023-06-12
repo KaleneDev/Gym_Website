@@ -1,10 +1,12 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import "../../style/components/WhyChooseUs.scss";
 import image1 from "../../assets/image1.png";
 import image2 from "../../assets/image2.png";
 import image3 from "../../assets/image3.png";
 import image4 from "../../assets/image4.png";
 import tick from "../../assets/tick.png";
+import { TextAnimationBtoT } from "../../utils/AnimationText";
+
 const WhyChoiseUs = () => {
     return (
         <section className="max-width-1400px innerWidth">
@@ -34,12 +36,16 @@ const WhyChoiseUs = () => {
 
                 <div className="container-choose__right">
                     <div className="container-choose__right__title">
-                        <div>
+                        <TextAnimationBtoT animationDuration="0.7" delay="0">
                             <span className="text-orange">SOME REASONS</span>
-                        </div>
-                        <div>
-                            <span className="stroke-text">WHY</span> CHOOSE US ?
-                        </div>
+                        </TextAnimationBtoT>
+
+                        <TextAnimationBtoT animationDuration="0.7" delay="0.5">
+                            <span>
+                                <span className="stroke-text">WHY</span> CHOOSE
+                                US ?
+                            </span>
+                        </TextAnimationBtoT>
                     </div>
                     <div className="container-choose__right__details">
                         <div>

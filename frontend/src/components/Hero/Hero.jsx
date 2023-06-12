@@ -5,6 +5,13 @@ import heroImage from "../../assets/hero_image.png";
 import heroImageBack from "../../assets/hero_image_back.png";
 import heart from "../../assets/heart.png";
 import calories from "../../assets/calories.png";
+import {
+    TextAnimationBtoT,
+    FadeIn,
+    SlideInFromRight,
+    SlideInFromLeft,
+    SlideInFromTop,
+} from "../../utils/AnimationText";
 
 const Hero = () => {
     return (
@@ -21,37 +28,61 @@ const Hero = () => {
                     <div className="hero-text">
                         <h1 className="stroke-text-container">
                             <div className="hero__shapeYour">
-                                <span>
-                                    <span className="stroke-text">SHAPE </span>
-                                    YOUR
-                                </span>
+                                <TextAnimationBtoT
+                                    animationDuration="1"
+                                    delay="0"
+                                >
+                                    <span>
+                                        <span className="stroke-text">
+                                            SHAPE{" "}
+                                        </span>
+                                        YOUR
+                                    </span>
+                                </TextAnimationBtoT>
                             </div>
+
                             <div className="hero__idealBody">
-                                <span>IDEAL BODY</span>
+                                <TextAnimationBtoT
+                                    animationDuration="1"
+                                    delay="0.2"
+                                >
+                                    <span>IDEAL BODY</span>
+                                </TextAnimationBtoT>
                             </div>
                         </h1>
-                        <span>
-                            In here we will help you to shape and build your
-                            ideal body and live up your life to fullest
-                        </span>
+                        <TextAnimationBtoT animationDuration="1" delay="0.4">
+                            <span>
+                                In here we will help you to shape and build your
+                                ideal body and live up your life to fullest
+                            </span>
+                        </TextAnimationBtoT>
                     </div>
                     <div className="figures">
-                        <div>
+                        <SlideInFromRight animationDuration="1">
                             <span>+ 140</span>
                             <span>EXPERT COACHES</span>
-                        </div>
-                        <div>
+                        </SlideInFromRight>
+
+                        <SlideInFromRight animationDuration="1" delay="0.25">
                             <span>+ 978</span>
                             <span>MEMBERS JOINED</span>
-                        </div>
-                        <div>
+                        </SlideInFromRight>
+
+                        <SlideInFromRight animationDuration="1" delay="0.5">
                             <span>+ 50</span>
                             <span>FITNESS PROGRAMS</span>
-                        </div>
+                        </SlideInFromRight>
                     </div>
                     <div className="button-hero">
-                        <button className="button-fill">Get Started</button>
-                        <button className="button-unfill">Learn More</button>
+                        <SlideInFromLeft>
+                            <button className="button-fill">Get Started</button>
+                        </SlideInFromLeft>
+
+                        <SlideInFromRight>
+                            <button className="button-unfill">
+                                Learn More
+                            </button>
+                        </SlideInFromRight>
                     </div>
                 </div>
                 <div className="hero-right">

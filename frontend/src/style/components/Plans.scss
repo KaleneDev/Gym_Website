@@ -39,9 +39,10 @@
         }
         & > div:nth-last-child(1) {
             // margin-left: 0;
-
         }
         .plans__container__cards__card {
+            border-radius: 10px;
+
             margin: 0 auto;
             display: grid;
             gap: 2rem;
