@@ -15,15 +15,25 @@ const Programs = () => {
         <section className="max-width-1400px innerWidth">
             <div className="programs-container">
                 <div className="title-programs">
-                    <span className="stroke-text">EXPLORE OUR</span>
-                    <span>PROGRAMS</span>
-                    <span className="stroke-text">TO SHARE YOU</span>
+                    <SlideInFromTop>
+                        <span className="stroke-text">EXPLORE OUR</span>
+                    </SlideInFromTop>
+                    <SlideInFromTop>
+                        <span>PROGRAMS</span>
+                    </SlideInFromTop>
+                    <SlideInFromTop>
+                        <span className="stroke-text">TO SHARE YOU</span>
+                    </SlideInFromTop>
                 </div>
 
                 <div className="programs-card-container">
                     {programsData.map((program, key) => (
-                        <SlideInFromTop delay={0.2 * key} animationDuration="1">
-                            <div key={key} className="programs-card">
+                        <SlideInFromTop
+                            delay={0}
+                            duration="1"
+                            key={key}
+                        >
+                            <div className="programs-card">
                                 {program.image}
                                 <span className="title">{program.heading}</span>
                                 <span>{program.details}</span>

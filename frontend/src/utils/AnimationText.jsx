@@ -6,41 +6,50 @@ const TextAnimationBtoT = ({ children, animationDuration, delay }) => {
     const animationDurations = animationDuration || 0.5;
     useEffect(() => {
         const textElement = document.querySelectorAll(`.animationTextBotToTop`);
-        const styleSheet =
-            document.styleSheets[0] ||
-            document.head.appendChild(document.createElement("style")).sheet;
 
-        const keyframesRule = "@keyframes fadein { to { top: 0; } }";
-        if (styleSheet.insertRule) {
-            // Pour les navigateurs compatibles avec la méthode insertRule
-            styleSheet.insertRule(keyframesRule, styleSheet.cssRules.length);
-        } else {
-            // Pour les navigateurs compatibles avec la propriété addRule
-            styleSheet.addRule("@keyframes fadein", "to { top: 0; }", -1);
-        }
+        window.addEventListener("scroll", checkContent);
+        window.addEventListener("load", checkContent);
+        function checkContent() {
+            const triggerBottom = (window.innerHeight / 5) * 4 + 150;
 
-        textElement.forEach((element) => {
-            const textElementSpan = element.querySelectorAll("div > span");
+            textElement.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBot = element.getBoundingClientRect().bottom;
 
-            //Set the height
-            element.style.height = textElementSpan.offsetHeight + "px";
-            element.style.display = "inline-block";
-            element.style.overflow = "hidden";
+                const textElementSpan = element.querySelectorAll("div > span");
 
-            //Set animation
-            textElementSpan.forEach((elementChild) => {
-                const keyAnimationDuration =
-                    elementChild.parentNode.getAttribute("animationDuration");
+                textElementSpan.forEach((elementChild) => {
+                    elementChild.style.top = element.offsetHeight + "px";
+                });
+                animation(element.offsetHeight);
+                function animation(top) {
+                    //Set the height
+                    element.style.height = textElementSpan.offsetHeight + "px";
+                    element.style.display = "inline-block";
+                    element.style.overflow = "hidden";
 
-                const keyAnimationDelay =
-                    elementChild.parentNode.getAttribute("delay");
+                    //Set animation
+                    textElementSpan.forEach((elementChild) => {
+                        const keyAnimationDuration =
+                            elementChild.parentNode.getAttribute(
+                                "animationDuration"
+                            );
 
-                elementChild.style.position = "relative";
-                elementChild.style.animation = `fadein ${keyAnimationDuration}s ease-in-out forwards`;
-                elementChild.style.animationDelay = `${keyAnimationDelay}s`;
-                elementChild.style.top = element.offsetHeight + "px";
+                        const keyAnimationDelay =
+                            elementChild.parentNode.getAttribute("delay");
+
+                        elementChild.style.position = "relative";
+                        elementChild.style.transition = `top ${keyAnimationDuration}s ease-in-out ${keyAnimationDelay}s`;
+                        elementChild.style.top = top + "px";
+                    });
+                }
+                if (elementTop > triggerBottom || elementBot < 0) {
+                    animation(element.offsetHeight);
+                } else {
+                    animation(0);
+                }
             });
-        });
+        }
     }, []);
 
     return (
@@ -54,39 +63,33 @@ const TextAnimationBtoT = ({ children, animationDuration, delay }) => {
     );
 };
 const FadeIn = ({ children, animationDuration }) => {
-    const className = `fadeIn`;
-    const animationDurations = animationDuration || 0.5;
-
-    useEffect(() => {
-        const textElement = document.querySelectorAll(`.fadeIn`);
-
-        textElement.forEach((element) => {
-            element.style.opacity = 0;
-
-            let currentTime = 0;
-            const increment = 16; // Intervalle de temps entre chaque étape de l'animation (en millisecondes)
-
-            const animate = () => {
-                const keyAnimationDuration =
-                    element.getAttribute("animationDuration") * 1000;
-                currentTime += increment;
-                const opacity = currentTime / keyAnimationDuration; // Calcule l'opacité en fonction du temps écoulé et de la durée totale
-
-                element.style.opacity = opacity > 1 ? 1 : opacity; // Limite l'opacité à une valeur maximale de 1
-
-                if (currentTime < keyAnimationDuration) {
-                    // Vérifie si l'animation est terminée
-                    requestAnimationFrame(animate); // Réexécute la fonction d'animation pour l'étape suivante
-                }
-            };
-            animate();
-        });
-    }, []);
-    return (
-        <div className={className} animationduration={animationDurations}>
-            {children}
-        </div>
-    );
+    // const className = `fadeIn`;
+    // const animationDurations = animationDuration || 0.5;
+    // useEffect(() => {
+    //     const textElement = document.querySelectorAll(`.fadeIn`);
+    //     textElement.forEach((element) => {
+    //         element.style.opacity = 0;
+    //         let currentTime = 0;
+    //         const increment = 16; // Intervalle de temps entre chaque étape de l'animation (en millisecondes)
+    //         const animate = () => {
+    //             const keyAnimationDuration =
+    //                 element.getAttribute("animationDuration") * 1000;
+    //             currentTime += increment;
+    //             const opacity = currentTime / keyAnimationDuration; // Calcule l'opacité en fonction du temps écoulé et de la durée totale
+    //             element.style.opacity = opacity > 1 ? 1 : opacity; // Limite l'opacité à une valeur maximale de 1
+    //             if (currentTime < keyAnimationDuration) {
+    //                 // Vérifie si l'animation est terminée
+    //                 requestAnimationFrame(animate); // Réexécute la fonction d'animation pour l'étape suivante
+    //             }
+    //         };
+    //         animate();
+    //     });
+    // }, []);
+    // return (
+    //     <div className={className} animationduration={animationDurations}>
+    //         {children}
+    //     </div>
+    // );
 };
 const SlideInFromRight = ({ children, animationDuration, delay }) => {
     const className = `slideInFromRight`;
@@ -95,55 +98,41 @@ const SlideInFromRight = ({ children, animationDuration, delay }) => {
 
     useEffect(() => {
         const textElement = document.querySelectorAll(`.slideInFromRight`);
-        const styleSheet =
-            document.styleSheets[0] ||
-            document.head.appendChild(document.createElement("style")).sheet;
 
-        const keyframesRule = `
-        @keyframes slideInFromRight {
-          0% {
-            opacity: 0;
-            transform: translateX(100%);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0%);
-          }
-        }
-      `;
-
-        if (styleSheet.insertRule) {
-            // Pour les navigateurs compatibles avec la méthode insertRule
-            styleSheet.insertRule(keyframesRule, styleSheet.cssRules.length);
-        } else {
-            // Pour les navigateurs compatibles avec la propriété addRule
-            styleSheet.addRule(
-                `
-    @keyframes slideInFromRight {
-      0% {
-        opacity: 0;
-        transform: translateX(100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0%);
-      }
-    }
-  `,
-                -1
-            );
-        }
         textElement.forEach((element) => {
             element.style.opacity = 0;
-            const keyAnimationDuration =
-                element.getAttribute("animationDuration");
-            const keyAnimationDelay = element.getAttribute("delay");
-            element.style.animation = `slideInFromRight ${keyAnimationDuration}s ease-in-out forwards`;
-            element.style.animationDelay = `${keyAnimationDelay}s`;
             element.style.transform = "translateX(100%)";
         });
-    }, []);
+        window.addEventListener("scroll", checkContent);
+        window.addEventListener("load", checkContent);
 
+        function checkContent() {
+            const triggerBottom = (window.innerHeight / 5) * 4 + 150;
+
+            textElement.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBot = element.getBoundingClientRect().bottom;
+
+                const keyAnimationDuration =
+                    element.getAttribute("animationDuration");
+                const keyAnimationDelay = element.getAttribute("delay");
+
+                function animation(opacity, transform) {
+                    element.style.opacity = opacity;
+                    element.style.transition = `transform ${keyAnimationDuration}s ease ${keyAnimationDelay}s, opacity ${
+                        keyAnimationDuration * 1.5
+                    }s ease`;
+                    element.style.transform = `translateX(${transform}%)`;
+                }
+
+                if (elementTop > triggerBottom || elementBot < 0) {
+                    animation(0, 100);
+                } else {
+                    animation(1, 0);
+                }
+            });
+        }
+    }, []);
     return (
         <div
             className={className}
@@ -161,53 +150,38 @@ const SlideInFromLeft = ({ children, animationDuration, delay }) => {
 
     useEffect(() => {
         const textElement = document.querySelectorAll(`.slideInFromLeft`);
-        const styleSheet =
-            document.styleSheets[0] ||
-            document.head.appendChild(document.createElement("style")).sheet;
 
-        const keyframesRule = `
-        @keyframes slideInFromLeft {
-          0% {
-            opacity: 0;
-            transform: translateX(-100%);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0%);
-          }
-        }
-      `;
-
-        if (styleSheet.insertRule) {
-            // Pour les navigateurs compatibles avec la méthode insertRule
-            styleSheet.insertRule(keyframesRule, styleSheet.cssRules.length);
-        } else {
-            // Pour les navigateurs compatibles avec la propriété addRule
-            styleSheet.addRule(
-                `
-    @keyframes slideInFromLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0%);
-      }
-    }
-  `,
-                -1
-            );
-        }
         textElement.forEach((element) => {
             element.style.opacity = 0;
-            const keyAnimationDuration =
-                element.getAttribute("animationDuration");
-            const keyAnimationDelay = element.getAttribute("delay");
-            element.style.animation = `slideInFromLeft ${keyAnimationDuration}s ease-in-out forwards`;
-            element.style.animationDelay = `${keyAnimationDelay}s`;
             element.style.transform = "translateX(-100%)";
         });
+        window.addEventListener("scroll", checkContent);
+        window.addEventListener("load", checkContent);
+
+        function checkContent() {
+            const triggerBottom = (window.innerHeight / 5) * 4 + 150;
+            textElement.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBot = element.getBoundingClientRect().bottom;
+                const keyAnimationDuration =
+                    element.getAttribute("animationDuration");
+                const keyAnimationDelay = element.getAttribute("delay");
+
+                function animation(opacity, transform) {
+                    element.style.opacity = opacity;
+                    element.style.transition = `transform ${keyAnimationDuration}s ease, opacity ${
+                        keyAnimationDuration * 1.5
+                    }s ease`;
+                    element.style.animationDelay = `${keyAnimationDelay}s`;
+                    element.style.transform = `translateX(${transform}%)`;
+                }
+                if (elementTop > triggerBottom || elementBot < 0) {
+                    animation(0, -100);
+                } else {
+                    animation(1, 0);
+                }
+            });
+        }
     }, []);
 
     return (
@@ -220,51 +194,100 @@ const SlideInFromLeft = ({ children, animationDuration, delay }) => {
         </div>
     );
 };
-const SlideInFromTop = ({ children, animationDuration, delay }) => {
+const SlideInFromTop = ({ children, duration, delay }) => {
     const className = `slideInFromTop`;
     const delays = delay || 0;
-    const animationDurations = animationDuration || 1;
+    const animationDurations = duration || 1;
     useEffect(() => {
         const textElement = document.querySelectorAll(`.slideInFromTop`);
 
         window.addEventListener("scroll", checkContent);
+        window.addEventListener("load", checkContent);
 
+        textElement.forEach((element) => {
+            element.style.opacity = 0;
+            element.style.transform = "translateY(-50%)";
+        });
         function checkContent() {
-            const triggerBottom = (window.innerHeight / 5) * 4;
+            const triggerBottom = (window.innerHeight / 5) * 4 + 150;
             textElement.forEach((element) => {
                 const elementTop = element.getBoundingClientRect().top;
-                const keyAnimationDuration =
-                    element.getAttribute("animationDuration");
-                console.log(keyAnimationDuration);
+                const elementBot = element.getBoundingClientRect().bottom;
+                const keyAnimationDuration = element.getAttribute("duration");
                 const keyAnimationDelay = element.getAttribute("delay");
-                if (elementTop < triggerBottom) {
-                    element.classList.add("show");
-                    element.style.opacity = 1;
-                    element.style.transition = `transform 2s ease`;
-                    element.style.transition = `transform ${keyAnimationDuration}s ease, opacity ${
-                        keyAnimationDuration * 1.5
+                function animation(opacity, transform, delay) {
+                    element.style.opacity = opacity;
+                    element.style.transition = `transform ${
+                        keyAnimationDuration * delay
+                    }s ease ${keyAnimationDelay}s, opacity ${
+                        keyAnimationDuration * delay
                     }s ease`;
-                    element.style.animationDelay = `${keyAnimationDelay}s`;
+                    element.style.transform = `translateY(${transform}%)`;
+                }
+                animation(0, -50);
+                // Vérification si l'élément est sorti de la fenêtre
+                if (elementTop > triggerBottom || elementBot < 0) {
+                    // L'élément est sorti de la fenêtre vers le haut ou le bas
+                    animation(0, -50, 0.5);
                 } else {
-                    element.classList.remove("show");
-                    element.style.opacity = 0;
-                    element.style.transition = `transform ${keyAnimationDuration}s ease, opacity ${
-                        keyAnimationDuration * 1
-                    }s ease`;
-                    element.style.transition = `transform ${keyAnimationDuration}s ease, opacity ${
-                        keyAnimationDuration * 1
-                    }s ease`;
+                    // L'élément est dans la fenêtre
+                    animation(1, 0, 1);
                 }
             });
         }
     }, []);
 
     return (
-        <div
-            className={className}
-            animationDuration={animationDurations}
-            delay={delays}
-        >
+        <div className={className} duration={animationDurations} delay={delays}>
+            {children}
+        </div>
+    );
+};
+const SlideInFromBot = ({ children, duration, delay }) => {
+    const className = `slideInFromBot`;
+    const delays = delay || 0;
+    const animationDurations = duration || 1;
+    useEffect(() => {
+        const textElement = document.querySelectorAll(`.slideInFromBot`);
+
+        window.addEventListener("scroll", checkContent);
+        window.addEventListener("load", checkContent);
+
+        textElement.forEach((element) => {
+            element.style.opacity = 0;
+            element.style.transform = "translateY(50%)";
+        });
+        function checkContent() {
+            const triggerBottom = (window.innerHeight / 5) * 4 + 150;
+            textElement.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBot = element.getBoundingClientRect().bottom;
+                const keyAnimationDuration = element.getAttribute("duration");
+                const keyAnimationDelay = element.getAttribute("delay");
+                function animation(opacity, transform, delay) {
+                    element.style.opacity = opacity;
+                    element.style.transition = `transform ${
+                        keyAnimationDuration * delay
+                    }s ease ${keyAnimationDelay}s, opacity ${
+                        keyAnimationDuration * delay
+                    }s ease`;
+                    element.style.transform = `translateY(${transform}%)`;
+                }
+                animation(0, 50);
+                // Vérification si l'élément est sorti de la fenêtre
+                if (elementTop > triggerBottom || elementBot < 0) {
+                    // L'élément est sorti de la fenêtre vers le haut ou le bas
+                    animation(0, 50, 0.5);
+                } else {
+                    // L'élément est dans la fenêtre
+                    animation(1, 0, 1);
+                }
+            });
+        }
+    }, []);
+
+    return (
+        <div className={className} duration={animationDurations} delay={delays}>
             {children}
         </div>
     );
@@ -275,4 +298,5 @@ export {
     SlideInFromRight,
     SlideInFromLeft,
     SlideInFromTop,
+    SlideInFromBot,
 };

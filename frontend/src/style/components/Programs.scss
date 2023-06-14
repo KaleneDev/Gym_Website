@@ -50,15 +50,7 @@
     }
 }
 // ANIMATION
-.slideInFromTop {
-    // opacity: 0;
-    transform: translateY(-50%);
-}
-.slideInFromTop.show {
-    // opacity: 1;
-    transform: translateY(0%);
-    
-}
+
 @media (min-width: 768px) {
     .programs-container {
         // margin-top: 20vw;
@@ -73,6 +65,7 @@
         display: grid;
         gap: 1rem;
         grid-template-columns: 1fr 1fr;
+    
     }
 }
 

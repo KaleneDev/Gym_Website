@@ -44,7 +44,7 @@ const Hero = () => {
                             <div className="hero__idealBody">
                                 <TextAnimationBtoT
                                     animationDuration="1"
-                                    delay="0.2"
+                                    delay="0.35"
                                 >
                                     <span>IDEAL BODY</span>
                                 </TextAnimationBtoT>
