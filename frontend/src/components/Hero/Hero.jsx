@@ -27,7 +27,7 @@ const Hero = () => {
                         <h1 className="stroke-text-container">
                             <div className="hero__shapeYour">
                                 <TextAnimationBtoT
-                                    animationDuration="1"
+                                    animationDuration="0.5"
                                     delay="0"
                                 >
                                     <span>
@@ -41,7 +41,7 @@ const Hero = () => {
 
                             <div className="hero__idealBody">
                                 <TextAnimationBtoT
-                                    animationDuration="1"
+                                    animationDuration="0.5"
                                     delay="0.35"
                                 >
                                     <span>IDEAL BODY</span>
@@ -85,19 +85,28 @@ const Hero = () => {
                 </div>
                 <div className="hero-right">
                     {" "}
-                    <div className="container-image">
-                        <img className="hero-image" src={heroImage} alt="" />
-                        <img
-                            className="hero-image-back"
-                            src={heroImageBack}
-                            alt=""
-                        />
-                    </div>
-                    <div className="heart-container">
-                        <img src={heart} alt="" />
-                        <span>Heart Rate</span>
-                        <span>116 bpm</span>
-                    </div>
+                    <SlideInFromRight>
+                        <div className="container-image">
+                            <img
+                                className="hero-image"
+                                src={heroImage}
+                                alt=""
+                            />
+                            <img
+                                className="hero-image-back"
+                                src={heroImageBack}
+                                alt=""
+                            />
+                        </div>
+                    </SlideInFromRight>
+                    <SlideInFromLeft>
+
+                        <div className="heart-container">
+                            <img src={heart} alt="" />
+                            <span>Heart Rate</span>
+                            <span>116 bpm</span>
+                        </div>
+                    </SlideInFromLeft>
                     <div className="calories-container">
                         <div className="calories-container-image">
                             <img src={calories} alt="" />

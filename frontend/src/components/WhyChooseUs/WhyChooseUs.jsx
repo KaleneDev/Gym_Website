@@ -55,11 +55,11 @@ const WhyChoiseUs = () => {
 
                 <div className="container-choose__right">
                     <div className="container-choose__right__title">
-                        <TextAnimationBtoT animationDuration="0.7" delay="0">
+                        <TextAnimationBtoT animationDuration="0.5" delay="0">
                             <span className="text-orange">SOME REASONS</span>
                         </TextAnimationBtoT>
 
-                        <TextAnimationBtoT animationDuration="0.7" delay="0">
+                        <TextAnimationBtoT animationDuration="0.5" delay="0.2">
                             <span>
                                 <span className="stroke-text">WHY</span> CHOOSE
                                 US ?
