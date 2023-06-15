@@ -11,12 +11,12 @@ require("./data/fontawesome");
 function App() {
     return (
         <div className="App">
-            <Hero></Hero>
-            <Programs></Programs>
-            <WhyChooseUs></WhyChooseUs>
-            <Plans></Plans>
-            <Testimonials></Testimonials>
-            <Join></Join>
+            {/* <Hero></Hero> */}
+            {/* <Programs></Programs> */}
+            {/* <WhyChooseUs></WhyChooseUs> */}
+            {/* <Plans></Plans> */}
+            {/* <Testimonials></Testimonials> */}
+            {/* <Join></Join> */}
             <Footer></Footer>
         </div>
     );

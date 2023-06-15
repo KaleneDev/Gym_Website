@@ -1,5 +1,5 @@
 import React from "react";
-// import Header from "../Header/Header";
+import Header from "../Header/Header";
 import "../../style/components/Hero.scss";
 import heroImage from "../../assets/hero_image.png";
 import heroImageBack from "../../assets/hero_image_back.png";
@@ -16,7 +16,7 @@ const Hero = () => {
         <section className="hero-wrapper max-width-1400px innerWidth">
             <div className="hero-container">
                 <div className="hero-left">
-                    {/* <Header /> */}
+                    <Header />
                     <div className="the-best-ad">
                         <div></div>
                         <span className="text">
