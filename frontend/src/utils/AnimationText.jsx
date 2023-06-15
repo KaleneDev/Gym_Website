@@ -192,7 +192,7 @@ const SlideInFromLeft = ({ children, animationDuration, delay }) => {
                 });
             }
         }
-    }, []);
+    });
 
     return (
         <div
@@ -249,7 +249,7 @@ const SlideInFromRight = ({ children, animationDuration, delay }) => {
                 });
             }
         }
-    }, []);
+    });
 
     return (
         <div
@@ -311,7 +311,7 @@ const SlideInFromTop = ({ children, duration, delay }) => {
                 });
             }
         }
-    }, []);
+    });
 
     return (
         <div className={className} duration={animationDurations} delay={delays}>
@@ -366,7 +366,7 @@ const SlideInFromBot = ({ children, duration, delay }) => {
                 });
             }
         }
-    }, []);
+    });
 
     return (
         <div className={className} duration={animationDurations} delay={delays}>
