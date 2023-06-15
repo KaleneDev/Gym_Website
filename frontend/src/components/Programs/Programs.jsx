@@ -3,10 +3,6 @@ import "../../style/components/Programs.scss";
 import { programsData } from "../../data/programsData";
 import rightArrow from "../../assets/rightArrow.png";
 import {
-    TextAnimationBtoT,
-    FadeIn,
-    SlideInFromRight,
-    SlideInFromLeft,
     SlideInFromTop,
 } from "../../utils/AnimationText";
 
