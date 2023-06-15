@@ -8,63 +8,63 @@ import nb from "../../assets/nb.png";
 import adidas from "../../assets/adidas.png";
 import nike from "../../assets/nike.png";
 import tick from "../../assets/tick.png";
-// import {
-//     TextAnimationBtoT,
-//     SlideInFromLeft,
-//     SlideInFromTop,
-//     SlideInFromBot,
-//     SlideInFromRight,
-// } from "../../utils/AnimationText";
+import {
+    TextAnimationBtoT,
+    SlideInFromLeft,
+    SlideInFromTop,
+    SlideInFromBot,
+    SlideInFromRight,
+} from "../../utils/AnimationText";
 
 const WhyChoiseUs = () => {
     return (
         <section className="max-width-1400px innerWidth">
             <div className="container-choose">
                 <div className="container-choose__left">
-                    {/* <SlideInFromLeft> */}
+                    <SlideInFromLeft>
                         <img
                             className="container-choose__left__image-1"
                             src={image1}
                             alt=""
                         />
-                    {/* </SlideInFromLeft> */}
+                    </SlideInFromLeft>
 
-                    {/* <SlideInFromTop> */}
+                    <SlideInFromTop>
                         <img
                             className="container-choose__left__image-2"
                             src={image2}
                             alt=""
                         />
-                    {/* </SlideInFromTop> */}
-                    {/* <SlideInFromBot> */}
+                    </SlideInFromTop>
+                    <SlideInFromBot>
 
                     <img
                         className="container-choose__left__image-3"
                         src={image3}
                         alt=""
                     />
-                    {/* </SlideInFromBot> */}
-                    {/* <SlideInFromRight> */}
+                    </SlideInFromBot>
+                    <SlideInFromRight>
                         <img
                             className="container-choose__left__image-4"
                             src={image4}
                             alt=""
                         />
-                    {/* </SlideInFromRight> */}
+                    </SlideInFromRight>
                 </div>
 
                 <div className="container-choose__right">
                     <div className="container-choose__right__title">
-                        {/* <TextAnimationBtoT animationDuration="0.7" delay="0"> */}
+                        <TextAnimationBtoT animationDuration="0.7" delay="0">
                             <span className="text-orange">SOME REASONS</span>
-                        {/* </TextAnimationBtoT> */}
+                        </TextAnimationBtoT>
 
-                        {/* <TextAnimationBtoT animationDuration="0.7" delay="0"> */}
+                        <TextAnimationBtoT animationDuration="0.7" delay="0">
                             <span>
                                 <span className="stroke-text">WHY</span> CHOOSE
                                 US ?
                             </span>
-                        {/* </TextAnimationBtoT> */}
+                        </TextAnimationBtoT>
                     </div>
                     <div className="container-choose__right__details">
                         <div>

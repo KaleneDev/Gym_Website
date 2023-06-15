@@ -2,33 +2,33 @@ import React from "react";
 import "../../style/components/Programs.scss";
 import { programsData } from "../../data/programsData";
 import rightArrow from "../../assets/rightArrow.png";
-// import {
-//     SlideInFromTop,
-// } from "../../utils/AnimationText";
+import {
+    SlideInFromTop,
+} from "../../utils/AnimationText";
 
 const Programs = () => {
     return (
         <section className="max-width-1400px innerWidth">
             <div className="programs-container">
                 <div className="title-programs">
-                    {/* <SlideInFromTop> */}
+                    <SlideInFromTop>
                         <span className="stroke-text">EXPLORE OUR</span>
-                    {/* </SlideInFromTop> */}
-                    {/* <SlideInFromTop> */}
+                    </SlideInFromTop>
+                    <SlideInFromTop>
                         <span>PROGRAMS</span>
-                    {/* </SlideInFromTop> */}
-                    {/* <SlideInFromTop> */}
+                    </SlideInFromTop>
+                    <SlideInFromTop>
                         <span className="stroke-text">TO SHARE YOU</span>
-                    {/* </SlideInFromTop> */}
+                    </SlideInFromTop>
                 </div>
 
                 <div className="programs-card-container">
                     {programsData.map((program, key) => (
-                        // <SlideInFromTop
-                        //     delay={0}
-                        //     duration="1"
-                        //     key={key}
-                        // >
+                        <SlideInFromTop
+                            delay={0}
+                            duration="1"
+                            key={key}
+                        >
                             <div className="programs-card">
                                 {program.image}
                                 <span className="title">{program.heading}</span>
@@ -38,7 +38,7 @@ const Programs = () => {
                                     <img src={rightArrow} alt="" />
                                 </div>
                             </div>
-                        // </SlideInFromTop>
+                        </SlideInFromTop>
                     ))}
                 </div>
 

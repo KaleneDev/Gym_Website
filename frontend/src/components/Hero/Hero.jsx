@@ -1,22 +1,22 @@
 import React from "react";
-import Header from "../Header/Header";
+// import Header from "../Header/Header";
 import "../../style/components/Hero.scss";
 import heroImage from "../../assets/hero_image.png";
 import heroImageBack from "../../assets/hero_image_back.png";
 import heart from "../../assets/heart.png";
 import calories from "../../assets/calories.png";
-// import {
-//     TextAnimationBtoT,
-//     SlideInFromRight,
-//     SlideInFromLeft,
-// } from "../../utils/AnimationText";
+import {
+    TextAnimationBtoT,
+    SlideInFromRight,
+    SlideInFromLeft,
+} from "../../utils/AnimationText";
 
 const Hero = () => {
     return (
         <section className="hero-wrapper max-width-1400px innerWidth">
             <div className="hero-container">
                 <div className="hero-left">
-                    <Header />
+                    {/* <Header /> */}
                     <div className="the-best-ad">
                         <div></div>
                         <span className="text">
@@ -26,61 +26,61 @@ const Hero = () => {
                     <div className="hero-text">
                         <h1 className="stroke-text-container">
                             <div className="hero__shapeYour">
-                                {/* <TextAnimationBtoT
+                                <TextAnimationBtoT
                                     animationDuration="1"
                                     delay="0"
-                                > */}
+                                >
                                     <span>
                                         <span className="stroke-text">
                                             SHAPE{" "}
                                         </span>
                                         YOUR
                                     </span>
-                                {/* </TextAnimationBtoT> */}
+                                </TextAnimationBtoT>
                             </div>
 
                             <div className="hero__idealBody">
-                                {/* <TextAnimationBtoT
+                                <TextAnimationBtoT
                                     animationDuration="1"
                                     delay="0.35"
-                                > */}
+                                >
                                     <span>IDEAL BODY</span>
-                                {/* </TextAnimationBtoT> */}
+                                </TextAnimationBtoT>
                             </div>
                         </h1>
-                        {/* <TextAnimationBtoT animationDuration="1" delay="0.4"> */}
+                        <TextAnimationBtoT animationDuration="1" delay="0.4">
                             <span>
                                 In here we will help you to shape and build your
                                 ideal body and live up your life to fullest
                             </span>
-                        {/* </TextAnimationBtoT> */}
+                        </TextAnimationBtoT>
                     </div>
                     <div className="figures">
-                        {/* <SlideInFromRight animationDuration="1"> */}
+                        <SlideInFromRight animationDuration="1">
                             <span>+ 140</span>
                             <span>EXPERT COACHES</span>
-                        {/* </SlideInFromRight> */}
+                        </SlideInFromRight>
 
-                        {/* <SlideInFromRight animationDuration="1" delay="0.25"> */}
+                        <SlideInFromRight animationDuration="1" delay="0.25">
                             <span>+ 978</span>
                             <span>MEMBERS JOINED</span>
-                        {/* </SlideInFromRight> */}
+                        </SlideInFromRight>
 
-                        {/* <SlideInFromRight animationDuration="1" delay="0.5"> */}
+                        <SlideInFromRight animationDuration="1" delay="0.5">
                             <span>+ 50</span>
                             <span>FITNESS PROGRAMS</span>
-                        {/* </SlideInFromRight> */}
+                        </SlideInFromRight>
                     </div>
                     <div className="button-hero">
-                        {/* <SlideInFromLeft> */}
+                        <SlideInFromLeft>
                             <button className="button-fill">Get Started</button>
-                        {/* </SlideInFromLeft> */}
+                        </SlideInFromLeft>
 
-                        {/* <SlideInFromRight> */}
+                        <SlideInFromRight>
                             <button className="button-unfill">
                                 Learn More
                             </button>
-                        {/* </SlideInFromRight> */}
+                        </SlideInFromRight>
                     </div>
                 </div>
                 <div className="hero-right">
