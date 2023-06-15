@@ -7,10 +7,8 @@ import heart from "../../assets/heart.png";
 import calories from "../../assets/calories.png";
 import {
     TextAnimationBtoT,
-    FadeIn,
     SlideInFromRight,
     SlideInFromLeft,
-    SlideInFromTop,
 } from "../../utils/AnimationText";
 
 const Hero = () => {
