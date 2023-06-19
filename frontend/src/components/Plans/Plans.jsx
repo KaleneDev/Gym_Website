@@ -3,7 +3,6 @@ import "../../style/components/Plans.scss";
 // import { plansData } from "../../data/plansData";
 import whiteTick from "../../assets/whiteTick.png";
 import {
-    TextAnimationBtoT,
     SlideInFromRight,
     SlideInFromLeft,
     SlideInFromTop,
