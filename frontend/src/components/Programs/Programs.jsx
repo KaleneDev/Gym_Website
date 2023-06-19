@@ -2,22 +2,20 @@ import React from "react";
 import "../../style/components/Programs.scss";
 import { programsData } from "../../data/programsData";
 import rightArrow from "../../assets/rightArrow.png";
-import {
-    SlideInFromTop,
-} from "../../utils/AnimationText";
+import { SlideInFromTop } from "../../utils/AnimationText";
 
 const Programs = () => {
     return (
         <section className="max-width-1400px innerWidth">
             <div className="programs-container">
                 <div className="title-programs">
-                    <SlideInFromTop>
+                    <SlideInFromTop scroll="off">
                         <span className="stroke-text">EXPLORE OUR</span>
                     </SlideInFromTop>
-                    <SlideInFromTop>
+                    <SlideInFromTop scroll="off">
                         <span>PROGRAMS</span>
                     </SlideInFromTop>
-                    <SlideInFromTop>
+                    <SlideInFromTop scroll="off">
                         <span className="stroke-text">TO SHARE YOU</span>
                     </SlideInFromTop>
                 </div>
@@ -27,6 +25,7 @@ const Programs = () => {
                         <SlideInFromTop
                             delay={0}
                             duration="1"
+                            scroll={"off"}
                             key={key}
                         >
                             <div className="programs-card">

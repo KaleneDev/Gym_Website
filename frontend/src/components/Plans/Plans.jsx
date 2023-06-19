@@ -23,7 +23,7 @@ const Plans = () => {
                     </SlideInFromTop>
                 </div>
                 <div className="plans__container__cards">
-                    <SlideInFromLeft duration='1.5'>
+                    <SlideInFromLeft duration="1.5" >
                         <div className="plans__container__cards__card">
                             <div>
                                 {" "}
@@ -58,7 +58,7 @@ const Plans = () => {
                             <button className="button-fill">Join now</button>
                         </div>
                     </SlideInFromLeft>
-                    <SlideInFromTop duration='1.5'>
+                    <SlideInFromTop duration="1.5">
                         <div className="plans__container__cards__card premium">
                             <div>
                                 {" "}
@@ -93,7 +93,7 @@ const Plans = () => {
                             <button className="button-fill">Join now</button>
                         </div>
                     </SlideInFromTop>
-                    <SlideInFromRight duration='1.5'>
+                    <SlideInFromRight duration="1.5" >
                         <div className="plans__container__cards__card">
                             <div>
                                 {" "}
