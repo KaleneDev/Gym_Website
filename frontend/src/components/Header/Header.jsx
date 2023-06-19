@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/logo.png";
+import { SlideInFromTop } from "../../utils/AnimationText";
 library.add(faBars, faXmark);
 const Header = () => {
     const navRef = useRef(null);
@@ -26,7 +27,6 @@ const Header = () => {
                     ] &&
                     ref.current.className === "header-menu responsive_nav"
                 ) {
-                    console.log(ref.current.className);
                     showNavbar();
                 }
             }
@@ -41,28 +41,37 @@ const Header = () => {
     return (
         <section className="header-wrapper">
             <div className="container-header">
-                <div className="logo-container">
-                    <img src={logo} alt="" className="logo" />
-                    <FontAwesomeIcon
-                        ref={burger}
-                        icon="fa-solid fa-bars"
-                        onClick={showNavbar}
-                        className="nav-btn"
-                    />
-                    <FontAwesomeIcon
-                        ref={close}
-                        icon="fa-solid fa-xmark"
-                        onClick={showNavbar}
-                        className="nav-btn btn-close"
-                    />
-                </div>
-                <div ref={navRef} className="header-menu">
-                    <div>Home</div>
-                    <div>Prolgrams</div>
-                    <div>Why us</div>
-                    <div>Plans</div>
-                    <div>Testimonials</div>
-                </div>
+                <SlideInFromTop>
+                    <div className="logo-container">
+                        <img src={logo} alt="" className="logo" />
+                        <FontAwesomeIcon
+                            ref={burger}
+                            icon="fa-solid fa-bars"
+                            onClick={showNavbar}
+                            className="nav-btn"
+                        />
+                        <FontAwesomeIcon
+                            ref={close}
+                            icon="fa-solid fa-xmark"
+                            onClick={showNavbar}
+                            className="nav-btn btn-close"
+                        />
+                    </div>
+                </SlideInFromTop>
+
+                <SlideInFromTop>
+                    <div ref={navRef} className="header-menu">
+                        <div>Home</div>
+
+                        <div>Prolgrams</div>
+
+                        <div>Why us</div>
+
+                        <div>Plans</div>
+
+                        <div>Testimonials</div>
+                    </div>
+                </SlideInFromTop>
             </div>
         </section>
     );

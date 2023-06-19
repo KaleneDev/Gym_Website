@@ -7,10 +7,7 @@
     .testimonials__container__left {
         display: grid;
         gap: 1rem;
-        & > :nth-child(1) {
-            color: $orange;
-            font-weight: 700;
-        }
+        align-items: center;
         & > :nth-child(2) {
             font-weight: 700;
             font-size: 2.9rem;
@@ -53,7 +50,7 @@
                 object-fit: cover;
                 border-radius: 10px;
             }
-            & > :nth-child(1) {
+           .stroke-block {
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -65,7 +62,7 @@
                 border: calc(3px) solid $orange;
                 border-radius: 10px;
             }
-            & > :nth-child(2) {
+            .block-fill {
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -110,11 +107,11 @@
                     position: absolute;
                     object-fit: cover;
                 }
-                & > :nth-child(1) {
+                .stroke-block {
                     right: calc(3000vw / 1400);
                     bottom: calc(3000vw / 1400);
                 }
-                & > :nth-child(2) {
+                .block-fill {
                     left: calc(3000vw / 1400 + 3px);
                     top: calc(3000vw / 1400 + 3px);
                 }

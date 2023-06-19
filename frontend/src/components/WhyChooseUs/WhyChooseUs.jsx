@@ -37,12 +37,11 @@ const WhyChoiseUs = () => {
                         />
                     </SlideInFromTop>
                     <SlideInFromBot>
-
-                    <img
-                        className="container-choose__left__image-3"
-                        src={image3}
-                        alt=""
-                    />
+                        <img
+                            className="container-choose__left__image-3"
+                            src={image3}
+                            alt=""
+                        />
                     </SlideInFromBot>
                     <SlideInFromRight>
                         <img
@@ -67,30 +66,42 @@ const WhyChoiseUs = () => {
                         </TextAnimationBtoT>
                     </div>
                     <div className="container-choose__right__details">
-                        <div>
-                            <img src={tick} alt="" />
-                            OVER 140+ EXPERT COACHS
-                        </div>
-                        <div>
-                            <img src={tick} alt="" />
-                            TRAIN SMARTER AND FASTER THAN BEFORE
-                        </div>
-                        <div>
-                            <img src={tick} alt="" />1 FREE PROGRAM FOR NEW
-                            MEMBER
-                        </div>
-                        <div>
-                            <img src={tick} alt="" />
-                            RELIABLE PARTNERS
-                        </div>
+                        <SlideInFromRight delay="0">
+                            <div>
+                                <img src={tick} alt="" />
+                                OVER 140+ EXPERT COACHS
+                            </div>
+                        </SlideInFromRight>
+                        <SlideInFromRight delay="0.1">
+                            <div>
+                                <img src={tick} alt="" />
+                                TRAIN SMARTER AND FASTER THAN BEFORE
+                            </div>
+                        </SlideInFromRight>
+                        <SlideInFromRight delay="0.2">
+                            <div>
+                                <img src={tick} alt="" />1 FREE PROGRAM FOR NEW
+                                MEMBER
+                            </div>
+                        </SlideInFromRight>
+                        <SlideInFromRight delay="0.3">
+                            <div>
+                                <img src={tick} alt="" />
+                                RELIABLE PARTNERS
+                            </div>
+                        </SlideInFromRight>
                     </div>
                     <div className="container-choose__right__partners">
-                        <span>OUR PARTNERS</span>
-                        <div className="container-choose__right__partners__logo">
-                            <img src={nb} alt="" />
-                            <img src={adidas} alt="" />
-                            <img src={nike} alt="" />
-                        </div>
+                        <SlideInFromRight>
+                            <span>OUR PARTNERS</span>
+                        </SlideInFromRight>
+                        <SlideInFromRight>
+                            <div className="container-choose__right__partners__logo">
+                                <img src={nb} alt="" />
+                                <img src={adidas} alt="" />
+                                <img src={nike} alt="" />
+                            </div>
+                        </SlideInFromRight>
                     </div>
                 </div>
             </div>

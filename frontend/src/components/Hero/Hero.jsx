@@ -17,19 +17,21 @@ const Hero = () => {
             <div className="hero-container">
                 <div className="hero-left">
                     <Header />
-                    <div className="the-best-ad">
-                        <div></div>
-                        <span className="text">
-                            The best fitness club in the town
-                        </span>
-                    </div>
+
+                    <SlideInFromLeft>
+                        <div className="the-best-ad">
+                            <div className="block-orange"></div>
+
+                            <span className="text">
+                                The best fitness club in the town
+                            </span>
+                        </div>
+                    </SlideInFromLeft>
+
                     <div className="hero-text">
                         <h1 className="stroke-text-container">
                             <div className="hero__shapeYour">
-                                <TextAnimationBtoT
-                                    animationDuration="0.5"
-                                    delay="0"
-                                >
+                                <TextAnimationBtoT duration="0.5" delay="0.2">
                                     <span>
                                         <span className="stroke-text">
                                             SHAPE{" "}
@@ -40,15 +42,12 @@ const Hero = () => {
                             </div>
 
                             <div className="hero__idealBody">
-                                <TextAnimationBtoT
-                                    animationDuration="0.5"
-                                    delay="0.35"
-                                >
+                                <TextAnimationBtoT duration="0.5" delay="0.45">
                                     <span>IDEAL BODY</span>
                                 </TextAnimationBtoT>
                             </div>
                         </h1>
-                        <TextAnimationBtoT animationDuration="1" delay="0.4">
+                        <TextAnimationBtoT duration="1" delay="0.4">
                             <span>
                                 In here we will help you to shape and build your
                                 ideal body and live up your life to fullest
@@ -56,17 +55,17 @@ const Hero = () => {
                         </TextAnimationBtoT>
                     </div>
                     <div className="figures">
-                        <SlideInFromRight animationDuration="1">
+                        <SlideInFromRight duration="1">
                             <span>+ 140</span>
                             <span>EXPERT COACHES</span>
                         </SlideInFromRight>
 
-                        <SlideInFromRight animationDuration="1" delay="0.25">
+                        <SlideInFromRight duration="1" delay="0.25">
                             <span>+ 978</span>
                             <span>MEMBERS JOINED</span>
                         </SlideInFromRight>
 
-                        <SlideInFromRight animationDuration="1" delay="0.5">
+                        <SlideInFromRight duration="1" delay="0.5">
                             <span>+ 50</span>
                             <span>FITNESS PROGRAMS</span>
                         </SlideInFromRight>
@@ -100,22 +99,23 @@ const Hero = () => {
                         </div>
                     </SlideInFromRight>
                     <SlideInFromLeft>
-
                         <div className="heart-container">
                             <img src={heart} alt="" />
                             <span>Heart Rate</span>
                             <span>116 bpm</span>
                         </div>
                     </SlideInFromLeft>
-                    <div className="calories-container">
-                        <div className="calories-container-image">
-                            <img src={calories} alt="" />
+                    <SlideInFromRight>
+                        <div className="calories-container">
+                            <div className="calories-container-image">
+                                <img src={calories} alt="" />
+                            </div>
+                            <div>
+                                <span>Calories burned</span>
+                                <span>220 kcal</span>
+                            </div>
                         </div>
-                        <div>
-                            <span>Calories burned</span>
-                            <span>220 kcal</span>
-                        </div>
-                    </div>
+                    </SlideInFromRight>
                     <div className="calories-burned-container"></div>
                 </div>
             </div>

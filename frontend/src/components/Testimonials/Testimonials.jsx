@@ -1,6 +1,12 @@
 import { React, useState } from "react";
 import "../../style/components/Testimonials.scss";
 import { testimonialsData } from "../../data/testimonialsData";
+
+import {
+    TextAnimationBtoT,
+    SlideInFromRight,
+    SlideInFromLeft,
+} from "../../utils/AnimationText";
 const Testimonials = () => {
     const [selected, setSelected] = useState(0);
     const tLength = testimonialsData.length;
@@ -9,24 +15,38 @@ const Testimonials = () => {
         <section className="max-width-1400px innerWidth">
             <div className="testimonials__container">
                 <div className="testimonials__container__left">
-                    <div>TESTIMONIALS</div>
-                    <div className="stroke-text">WHAT THEY</div>
-                    <div>SAY ABOUT US</div>
-                    <div>{testimonialsData[selected].review}</div>
+                    <TextAnimationBtoT delay={0}>
+                        <div className="text-orange">TESTIMONIALS</div>
+                    </TextAnimationBtoT>
+                    <TextAnimationBtoT delay={0.15}>
+                        <div className="stroke-text">WHAT THEY</div>
+                    </TextAnimationBtoT>
+                    <TextAnimationBtoT delay={0.25}>
+                        <div>SAY ABOUT US</div>
+                    </TextAnimationBtoT>
+                    <TextAnimationBtoT delay={0.35}>
+                        <div>{testimonialsData[selected].review}</div>
+                    </TextAnimationBtoT>
                     <div>
-                        <span className="testimonials__name">
-                            {testimonialsData[selected].name}
-                        </span>
-                        <span> - </span>
-                        <span className="testimonials__status">
-                            {testimonialsData[selected].status}
-                        </span>
+                        <SlideInFromLeft>
+                            <span className="testimonials__name">
+                                {testimonialsData[selected].name}
+                            </span>
+                            <span> - </span>
+                            <span className="testimonials__status">
+                                {testimonialsData[selected].status}
+                            </span>
+                        </SlideInFromLeft>
                     </div>
                 </div>
                 <div className="testimonials__container__right">
                     <div className="testimonials__container__image">
-                        <div></div>
-                        <div></div>
+                        <SlideInFromLeft>
+                            <div className="stroke-block"></div>
+                        </SlideInFromLeft>
+                        <SlideInFromRight>
+                            <div className="block-fill"></div>
+                        </SlideInFromRight>
                         <img src={testimonialsData[selected].image} alt="" />
                     </div>
                     <div className="testimonials__container__arrows">
