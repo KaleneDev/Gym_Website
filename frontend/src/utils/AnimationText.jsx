@@ -33,7 +33,7 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
                     element.style.height = textElementSpan.offsetHeight + "px";
                     element.style.display = "inline-block";
                     element.style.overflow = "hidden";
-                  
+
                     //Set animation
                     textElementSpan.forEach((elementChild) => {
                         const keyAnimationDuration =
@@ -398,7 +398,12 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
     }, []);
 
     return (
-        <div className={className} duration={animationDurations} delay={delays}>
+        <div
+            className={className}
+            duration={animationDurations}
+            delay={delays}
+            scroll={ScrollTopAndBot}
+        >
             {children}
         </div>
     );
