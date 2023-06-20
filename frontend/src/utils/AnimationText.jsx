@@ -357,8 +357,12 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
         window.addEventListener("load", checkContent);
 
         textElement.forEach((element) => {
-            element.style.opacity = 0;
-            element.style.transform = "translateY(50%)";
+            // element.style.opacity = 0;
+            // element.style.transform = "translateY(50%)";
+            element.childNodes.forEach((child) => {
+                child.style.opacity = 0;
+                child.style.transform = `translateY(50%)`;
+            });
         });
         function checkContent() {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
@@ -370,13 +374,18 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
                 const keyAnimationScroll = element.getAttribute("scroll");
 
                 function animation(opacity, transform, duration) {
-                    element.style.opacity = opacity;
-                    element.style.transition = `transform ${
-                        keyAnimationDuration * duration
-                    }s ease ${keyAnimationDelay}s, opacity ${
-                        keyAnimationDuration * duration * 1.5
-                    }s ease`;
-                    element.style.transform = `translateY(${transform}%)`;
+                    element.childNodes.forEach((child) => {
+                        if (child.tagName.toLowerCase() === "span") {
+                            child.style.display = "inline-block";
+                        }
+                        child.style.opacity = opacity;
+                        child.style.transition = `transform ${
+                            keyAnimationDuration * duration
+                        }s ease ${keyAnimationDelay}s, opacity ${
+                            keyAnimationDuration * duration * 1.5
+                        }s ease`;
+                        child.style.transform = `translateY(${transform}%)`;
+                    });
                 }
                 if (keyAnimationScroll === "off") {
                     elementBot = 0;
