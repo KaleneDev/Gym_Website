@@ -58,7 +58,7 @@ const WhyChoiseUs = () => {
                             <span className="text-orange">SOME REASONS</span>
                         </TextAnimationBtoT>
 
-                        <TextAnimationBtoT animationDuration="0.5" delay="0.2">
+                        <TextAnimationBtoT animationDuration="0.5" delay="0.1">
                             <span>
                                 <span className="stroke-text">WHY</span> CHOOSE
                                 US ?

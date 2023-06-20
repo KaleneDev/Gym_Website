@@ -324,7 +324,7 @@ const SlideInFromTop = ({ children, duration, delay, scroll }) => {
                 // Vérification si l'élément est sorti de la fenêtre
                 if (elementTop > triggerBottom || elementBot < 0) {
                     // L'élément est sorti de la fenêtre vers le haut ou le bas
-                    animation(0, -50, 0.1);
+                    animation(0, -50, 0);
                 } else {
                     // L'élément est dans la fenêtre
                     animation(1, 0, 1);
@@ -397,10 +397,83 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
                 // Vérification si l'élément est sorti de la fenêtre
                 if (elementTop > triggerBottom || elementBot < 0) {
                     // L'élément est sorti de la fenêtre vers le haut ou le bas
-                    animation(0, 50, 0.1);
+                    animation(0, 50, 0);
                 } else {
                     // L'élément est dans la fenêtre
                     animation(1, 0, 1);
+                }
+            });
+        }
+    }, []);
+
+    return (
+        <div
+            className={className}
+            duration={animationDurations}
+            delay={delays}
+            scroll={ScrollTopAndBot}
+        >
+            {children}
+        </div>
+    );
+};
+const ZoomOut = ({ children, duration, delay, scroll }) => {
+    const className = `ZoomOut`;
+    const delays = delay || 0;
+    const animationDurations = duration || 1;
+    const ScrollTopAndBot = scroll || "off";
+
+    useEffect(() => {
+        const textElement = document.querySelectorAll(`.ZoomOut`);
+
+        window.addEventListener("scroll", checkContent);
+        window.addEventListener("load", checkContent);
+
+        textElement.forEach((element) => {
+            // element.style.opacity = 0;
+            // element.style.transform = "translateY(50%)";
+            element.childNodes.forEach((child) => {
+                child.style.opacity = 0;
+                child.style.transform = `scale(0.5)`;
+            });
+        });
+        function checkContent() {
+            const triggerBottom = (window.innerHeight / 5) * 4 + 150;
+            textElement.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                let elementBot = element.getBoundingClientRect().bottom;
+                const keyAnimationDuration = element.getAttribute("duration");
+                const keyAnimationDelay = element.getAttribute("delay");
+                const keyAnimationScroll = element.getAttribute("scroll");
+
+                function animation(opacity, transform, duration) {
+                    element.childNodes.forEach((child) => {
+                        if (child.tagName.toLowerCase() === "span") {
+                            child.style.display = "inline-block";
+                        }
+                        child.style.opacity = opacity;
+                        child.style.transition = `transform ${
+                            keyAnimationDuration * duration
+                        }s ease ${keyAnimationDelay}s, opacity ${
+                            keyAnimationDuration * duration
+                        }s ease`;
+                        child.style.transform = `scale(${transform})`;
+                    });
+                }
+                if (keyAnimationScroll === "off") {
+                    elementBot = 0;
+                } else if (keyAnimationScroll === "on") {
+                    elementBot = element.getBoundingClientRect().bottom;
+                } else {
+                    elementBot = 0;
+                }
+                // Vérification si l'élément est sorti de la fenêtre
+                if (elementTop > triggerBottom || elementBot < 0) {
+                    // L'élément est sorti de la fenêtre vers le haut ou le bas
+                    animation(0, 0.5, 0.1);
+                } else {
+                    // L'élément est dans la fenêtre
+                    animation(1, 1, 1);
                 }
             });
         }
@@ -424,4 +497,5 @@ export {
     SlideInFromLeft,
     SlideInFromTop,
     SlideInFromBot,
+    ZoomOut,
 };

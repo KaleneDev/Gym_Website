@@ -79,11 +79,13 @@
             }
         }
         .testimonials__container__arrows {
-            margin-top: 2rem;
+            svg {
+                margin-top: 2rem;
+                z-index: 100;
+                width: 70px;
+                cursor: pointer;
+            }
             display: flex;
-            width: 100px;
-            cursor: pointer;
-            z-index: 100;
         }
     }
 }

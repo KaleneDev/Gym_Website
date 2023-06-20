@@ -6,6 +6,7 @@ import {
     TextAnimationBtoT,
     SlideInFromRight,
     SlideInFromLeft,
+    ZoomOut,
 } from "../../utils/AnimationText";
 const Testimonials = () => {
     const [selected, setSelected] = useState(0);
@@ -47,46 +48,54 @@ const Testimonials = () => {
                         <SlideInFromRight>
                             <div className="block-fill"></div>
                         </SlideInFromRight>
-                        <img src={testimonialsData[selected].image} alt="" />
+                        <ZoomOut>
+                            <img
+                                src={testimonialsData[selected].image}
+                                alt=""
+                            />
+                        </ZoomOut>
                     </div>
                     <div className="testimonials__container__arrows">
-                        <svg
-                            onClick={() => {
-                                setSelected(
-                                    selected ? selected - 1 : tLength - 1
-                                );
-                            }}
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2.5}
-                            stroke="currentColor"
-                            className="w-6 h-6 arrow-left"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
-                            />
-                        </svg>
-
-                        <svg
-                            onClick={() => {
-                                setSelected((selected + 1) % tLength);
-                            }}
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2.5}
-                            stroke="currentColor"
-                            className="w-6 h-6 arrow-right"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                            />
-                        </svg>
+                        <SlideInFromLeft>
+                            <svg
+                                onClick={() => {
+                                    setSelected(
+                                        selected ? selected - 1 : tLength - 1
+                                    );
+                                }}
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2.5}
+                                stroke="currentColor"
+                                className="w-6 h-6 arrow-left"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
+                                />
+                            </svg>
+                        </SlideInFromLeft>
+                        <SlideInFromRight>
+                            <svg
+                                onClick={() => {
+                                    setSelected((selected + 1) % tLength);
+                                }}
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2.5}
+                                stroke="currentColor"
+                                className="w-6 h-6 arrow-right"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                                />
+                            </svg>
+                        </SlideInFromRight>
                     </div>
                 </div>
             </div>

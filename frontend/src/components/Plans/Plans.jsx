@@ -6,6 +6,7 @@ import {
     SlideInFromRight,
     SlideInFromLeft,
     SlideInFromTop,
+    ZoomOut,
 } from "../../utils/AnimationText";
 const Plans = () => {
     return (
@@ -23,7 +24,7 @@ const Plans = () => {
                     </SlideInFromTop>
                 </div>
                 <div className="plans__container__cards">
-                    <SlideInFromLeft duration="1.5" >
+                    <SlideInFromLeft duration="1.5">
                         <div className="plans__container__cards__card">
                             <div>
                                 {" "}
@@ -58,7 +59,7 @@ const Plans = () => {
                             <button className="button-fill">Join now</button>
                         </div>
                     </SlideInFromLeft>
-                    <SlideInFromTop duration="1.5">
+                    <ZoomOut duration="1.5">
                         <div className="plans__container__cards__card premium">
                             <div>
                                 {" "}
@@ -92,8 +93,8 @@ const Plans = () => {
                             </div>
                             <button className="button-fill">Join now</button>
                         </div>
-                    </SlideInFromTop>
-                    <SlideInFromRight duration="1.5" >
+                    </ZoomOut>
+                    <SlideInFromRight duration="1.5">
                         <div className="plans__container__cards__card">
                             <div>
                                 {" "}
