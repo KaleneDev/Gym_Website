@@ -22,6 +22,9 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
 
                 const textElementSpan = element.querySelectorAll("div > * ");
 
+                // element.style.opacity = 0;
+                // element.style.transform = "translateY(100%)";
+
                 textElementSpan.forEach((element) => {
                     // element.style.transform = "translateY(100%)";
                     element.style.top = element.offsetHeight + "px";
