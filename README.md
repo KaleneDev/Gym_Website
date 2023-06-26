@@ -5,8 +5,10 @@ Gym_Website is a responsive and dynamic website for a fitness gym. It provides i
 2. Navigate to the project directory: `cd Gym_Website`
 3. Install the necessary dependencies: npm install
 4. Customize the website content, images, and styling according to your gym's branding and requirements.
-5. Build the website: `npm run build`
-6. Deploy the built files to a web server or hosting service of your choice.
+5. Customize the project's configuration files, if required.
+6. Start the development server: npm start Access the project in your browser at http://localhost:3000 or the specified port.
+7. Build the website: `npm run build`
+8. Deploy the built files to a web server or hosting service of your choice.
 ## Usage
 Once the website is deployed, users can access it through a web browser to explore the gym's information, book classes, and register for membership. The website is designed to be intuitive and user-friendly, providing a seamless experience for both visitors and gym members.
 
@@ -15,6 +17,7 @@ Once the website is deployed, users can access it through a web browser to explo
 - Sass: CSS preprocessor for enhanced styling capabilities.
 - JavaScript: Dynamic behavior and interactivity.
 - React: JavaScript library for building user interfaces.
+- Webpack: Module bundler for building the project.
 ## Contributing
 Contributions to the Gym_Website project are welcome! If you encounter any issues or have ideas for improvements, please open an issue on the GitHub repository. You can also fork the repository, make your changes, and submit a pull request.
 
