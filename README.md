@@ -1,7 +1,7 @@
 ﻿# Gym_Website
 Gym_Website is a responsive and dynamic website for a fitness gym. It provides information about the gym's facilities, services, classes, trainers. This repository contains all the necessary files and code to set up the website.
 ## Installation
-1. Clone the repository: `git clone https://github.com/your-username/Gym_Website.git`
+1. Clone the repository: `git clone https://github.com/KaleneDev/Gym_Website.git`
 2. Navigate to the project directory: `cd Gym_Website`
 3. Install the necessary dependencies: npm install
 4. Customize the website content, images, and styling according to your gym's branding and requirements.
