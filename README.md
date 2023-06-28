@@ -6,7 +6,7 @@ Gym_Website is a responsive and dynamic website for a fitness gym. It provides i
 3. Install the necessary dependencies: npm install
 4. Customize the website content, images, and styling according to your gym's branding and requirements.
 5. Customize the project's configuration files, if required.
-6. Start the development server: npm start Access the project in your browser at http://localhost:3000 or the specified port.
+6. Start the development server: npm start Access the project in your browser at `http://localhost:3000` or the specified port.
 7. Build the website: `npm run build`
 8. Deploy the built files to a web server or hosting service of your choice.
 ## Usage

@@ -67,8 +67,9 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
-    }, []);
 
+        checkContent()
+    }, []);
     return (
         <div
             className={className}
@@ -170,6 +171,7 @@ const SlideInFromRight = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
+        checkContent();
     }, []);
     return (
         <div
@@ -240,6 +242,7 @@ const SlideInFromLeft = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
+        checkContent();
     }, []);
 
     return (
@@ -334,6 +337,7 @@ const SlideInFromTop = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
+        checkContent();
     }, []);
 
     return (
@@ -407,6 +411,7 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
+        checkContent();
     }, []);
 
     return (
@@ -480,6 +485,7 @@ const ZoomOut = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
+        checkContent();
     }, []);
 
     return (
