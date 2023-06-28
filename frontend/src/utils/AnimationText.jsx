@@ -10,7 +10,7 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
         const textElement = document.querySelectorAll(`.animationTextBotToTop`);
 
         window.addEventListener("scroll", checkContent);
-        window.addEventListener("load", checkContent);
+        // window.addEventListener("load", checkContent);
 
         function checkContent() {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
@@ -128,7 +128,7 @@ const SlideInFromRight = ({ children, duration, delay, scroll }) => {
             });
         });
         window.addEventListener("scroll", checkContent);
-        window.addEventListener("load", checkContent);
+        // window.addEventListener("load", checkContent);
 
         function checkContent() {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
@@ -202,7 +202,7 @@ const SlideInFromLeft = ({ children, duration, delay, scroll }) => {
             });
         });
         window.addEventListener("scroll", checkContent);
-        window.addEventListener("load", checkContent);
+        // window.addEventListener("load", checkContent);
 
         function checkContent() {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
@@ -265,7 +265,7 @@ const SlideInFromTop = ({ children, duration, delay, scroll }) => {
         const textElement = document.querySelectorAll(`.slideInFromTop`);
 
         window.addEventListener("scroll", checkContent);
-        window.addEventListener("load", checkContent);
+        // window.addEventListener("load", checkContent);
 
         textElement.forEach((element) => {
             // element.style.opacity = 0;
@@ -361,7 +361,7 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
         const textElement = document.querySelectorAll(`.slideInFromBot`);
 
         window.addEventListener("scroll", checkContent);
-        window.addEventListener("load", checkContent);
+        // window.addEventListener("load", checkContent);
 
         textElement.forEach((element) => {
             // element.style.opacity = 0;
@@ -435,7 +435,7 @@ const ZoomOut = ({ children, duration, delay, scroll }) => {
         const textElement = document.querySelectorAll(`.ZoomOut`);
 
         window.addEventListener("scroll", checkContent);
-        window.addEventListener("load", checkContent);
+        // window.addEventListener("load", checkContent);
 
         textElement.forEach((element) => {
             // element.style.opacity = 0;

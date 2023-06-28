@@ -23,8 +23,10 @@ code {
 .stroke-text {
     -webkit-text-stroke: calc(300vw / 1920) white;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     z-index: 100;
 }
+
 .button-fill {
     background-color: $orange;
     padding: 0.7rem 2rem;
