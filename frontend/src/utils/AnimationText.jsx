@@ -9,13 +9,25 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
     useEffect(() => {
         const textElement = document.querySelectorAll(`.animationTextBotToTop`);
 
-        window.addEventListener("scroll", checkContent);
-        // window.addEventListener("load", checkContent);
-
         function checkContent() {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
 
             textElement.forEach((element) => {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: "0px",
+                    threshold: 0.5,
+                };
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            checkContent();
+                        }
+                    });
+                }, observerOptions);
+
+                observer.observe(element);
+
                 const elementTop = element.getBoundingClientRect().top;
                 let elementBot = element.getBoundingClientRect().bottom;
                 const keyAnimationScroll = element.getAttribute("scroll");
@@ -68,7 +80,11 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
             });
         }
 
-        checkContent()
+        checkContent();
+        window.addEventListener("scroll", checkContent);
+        return () => {
+            window.removeEventListener("scroll", checkContent);
+        };
     }, []);
     return (
         <div
@@ -120,15 +136,24 @@ const SlideInFromRight = ({ children, duration, delay, scroll }) => {
         const textElement = document.querySelectorAll(`.slideInFromRight`);
 
         textElement.forEach((element) => {
-            // element.style.opacity = 0;
-            // element.style.transform = "translateX(100%)";
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5,
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        checkContent();
+                    }
+                });
+            }, observerOptions);
+            observer.observe(element);
             element.childNodes.forEach((child) => {
                 child.style.opacity = 0;
                 child.style.transform = "translateX(100%)";
             });
         });
-        window.addEventListener("scroll", checkContent);
-        // window.addEventListener("load", checkContent);
 
         function checkContent() {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
@@ -172,6 +197,10 @@ const SlideInFromRight = ({ children, duration, delay, scroll }) => {
             });
         }
         checkContent();
+        window.addEventListener("scroll", checkContent);
+        return () => {
+            window.removeEventListener("scroll", checkContent);
+        };
     }, []);
     return (
         <div
@@ -194,14 +223,25 @@ const SlideInFromLeft = ({ children, duration, delay, scroll }) => {
         const textElement = document.querySelectorAll(`.slideInFromLeft`);
 
         textElement.forEach((element) => {
-            // element.style.opacity = 0;
-            // element.style.transform = "translateX(-100%)";
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5,
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        checkContent();
+                    }
+                });
+            }, observerOptions);
+
+            observer.observe(element);
             element.childNodes.forEach((child) => {
                 child.style.opacity = 0;
                 child.style.transform = "translateX(-100%)";
             });
         });
-        window.addEventListener("scroll", checkContent);
         // window.addEventListener("load", checkContent);
 
         function checkContent() {
@@ -243,6 +283,10 @@ const SlideInFromLeft = ({ children, duration, delay, scroll }) => {
             });
         }
         checkContent();
+        window.addEventListener("scroll", checkContent);
+        return () => {
+            window.removeEventListener("scroll", checkContent);
+        };
     }, []);
 
     return (
@@ -264,12 +308,21 @@ const SlideInFromTop = ({ children, duration, delay, scroll }) => {
     useEffect(() => {
         const textElement = document.querySelectorAll(`.slideInFromTop`);
 
-        window.addEventListener("scroll", checkContent);
-        // window.addEventListener("load", checkContent);
-
         textElement.forEach((element) => {
-            // element.style.opacity = 0;
-            // element.style.transform = "translateY(-50%)";
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5,
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        checkContent();
+                    }
+                });
+            }, observerOptions);
+
+            observer.observe(element);
             element.childNodes.forEach((child) => {
                 child.style.opacity = 0;
                 child.style.transform = `translateY(-50%)`;
@@ -285,25 +338,6 @@ const SlideInFromTop = ({ children, duration, delay, scroll }) => {
                 const keyAnimationDelay = element.getAttribute("delay");
                 const keyAnimationScroll = element.getAttribute("scroll");
 
-                // function animationThreshold(opacity, transform) {
-                //     const options = {
-                //         threshold: 0.5, // 50% de visibilité requise pour déclencher l'événement
-                //     };
-                //     const observer = new IntersectionObserver(
-                //         (entries, observer) => {
-                //             entries.forEach((entry) => {
-                //                 if (entry.isIntersecting) {
-                //                     animation(1, 0, 1);
-                //                     observer.unobserve(entry.target);
-                //                 } else {
-                //                     animation(0, -50, 0.5);
-                //                 }
-                //             });
-                //         },
-                //         options
-                //     );
-                //     observer.observe(element);
-                // }
                 function animation(opacity, transform, duration) {
                     element.childNodes.forEach((child) => {
                         if (child.tagName.toLowerCase() === "span") {
@@ -337,7 +371,12 @@ const SlideInFromTop = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
+        window.addEventListener("scroll", checkContent);
+
         checkContent();
+        return () => {
+            window.removeEventListener("scroll", checkContent);
+        };
     }, []);
 
     return (
@@ -360,12 +399,20 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
     useEffect(() => {
         const textElement = document.querySelectorAll(`.slideInFromBot`);
 
-        window.addEventListener("scroll", checkContent);
-        // window.addEventListener("load", checkContent);
-
         textElement.forEach((element) => {
-            // element.style.opacity = 0;
-            // element.style.transform = "translateY(50%)";
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5,
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        checkContent();
+                    }
+                });
+            }, observerOptions);
+            observer.observe(element);
             element.childNodes.forEach((child) => {
                 child.style.opacity = 0;
                 child.style.transform = `translateY(50%)`;
@@ -411,7 +458,12 @@ const SlideInFromBot = ({ children, duration, delay, scroll }) => {
                 }
             });
         }
+        window.addEventListener("scroll", checkContent);
+
         checkContent();
+        return () => {
+            window.removeEventListener("scroll", checkContent);
+        };
     }, []);
 
     return (
@@ -434,12 +486,21 @@ const ZoomOut = ({ children, duration, delay, scroll }) => {
     useEffect(() => {
         const textElement = document.querySelectorAll(`.ZoomOut`);
 
-        window.addEventListener("scroll", checkContent);
-        // window.addEventListener("load", checkContent);
-
         textElement.forEach((element) => {
-            // element.style.opacity = 0;
-            // element.style.transform = "translateY(50%)";
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5,
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        checkContent();
+                    }
+                });
+            }, observerOptions);
+
+            observer.observe(element);
             element.childNodes.forEach((child) => {
                 child.style.opacity = 0;
                 child.style.transform = `scale(0.5)`;
@@ -486,6 +547,10 @@ const ZoomOut = ({ children, duration, delay, scroll }) => {
             });
         }
         checkContent();
+        window.addEventListener("scroll", checkContent);
+        return () => {
+            window.removeEventListener("scroll", checkContent);
+        };
     }, []);
 
     return (
