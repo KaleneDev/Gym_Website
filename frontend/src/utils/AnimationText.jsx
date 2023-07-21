@@ -13,20 +13,7 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
 
             textElement.forEach((element) => {
-                const observerOptions = {
-                    root: null,
-                    rootMargin: "0px",
-                    threshold: 0.5,
-                };
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            checkContent();
-                        }
-                    });
-                }, observerOptions);
 
-                observer.observe(element);
 
                 const elementTop = element.getBoundingClientRect().top;
                 let elementBot = element.getBoundingClientRect().bottom;
