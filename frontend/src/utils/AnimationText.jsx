@@ -13,8 +13,6 @@ const TextAnimationBtoT = ({ children, duration, delay, scroll }) => {
             const triggerBottom = (window.innerHeight / 5) * 4 + 150;
 
             textElement.forEach((element) => {
-
-
                 const elementTop = element.getBoundingClientRect().top;
                 let elementBot = element.getBoundingClientRect().bottom;
                 const keyAnimationScroll = element.getAttribute("scroll");
