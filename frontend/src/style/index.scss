@@ -7,14 +7,21 @@ $planCard: linear-gradient(210.41deg, #fa5042 1.14%, #ffa739 100.75%);
 $appColor: #3c3f45;
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    //     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    //     "Helvetica Neue", sans-serif;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+}
+* {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: "Inter", sans-serif;
-}
+    font-family: "Roboto", sans-serif;
 
+}
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
@@ -23,6 +30,7 @@ code {
 .stroke-text {
     -webkit-text-stroke: calc(300vw / 1920) white;
     -webkit-text-fill-color: transparent;
+    
     color: transparent;
     z-index: 100;
 }

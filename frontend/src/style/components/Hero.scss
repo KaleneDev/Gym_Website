@@ -1,6 +1,5 @@
 @import "../index.scss";
 * {
-    font-family: "Inter", sans-serif;
     color: white;
 }
 
@@ -165,10 +164,7 @@
         }
     }
 }
-.slideInFromRight {
-    // animation: slideIn 1s ease-in-out forwards;
-    // transform: translateX(100%);
-}
+
 // @keyframes slideIn {
 //     0% {
 //         opacity: 0;
