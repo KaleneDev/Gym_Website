@@ -31,4 +31,5 @@ If you have any questions or need further assistance, please feel free to contac
 
 Thank you for using Gym_Website! We hope you find it helpful and enjoy your fitness journey.
 
-https://gym-web-site-v1.netlify.app/
+See WebSite : https://www.gym.kalene-apiou.com/
+See GitHub : https://github.com/KaleneDev/Gym_Website
